@@ -27,6 +27,20 @@ gem 'jbuilder', '~> 2.5'
 # Use ActiveModel has_secure_password
 # gem 'bcrypt', '~> 3.1.7'
 
+  # Added Pry, Bootstrap Generators
+  gem 'bootstrap-generators', '~> 3.3.4'
+  gem 'record_tag_helper', '~> 1.0'
+
+  gem 'bcrypt', '~> 3.1.7'                # uncomment this line
+
+  group :development, :test do
+    # Use pry with Rails console
+    gem 'pry-rails'
+
+    # Better Rails Error Pages
+    gem 'better_errors'
+  end
+
 # Use Capistrano for deployment
 # gem 'capistrano-rails', group: :development
 
