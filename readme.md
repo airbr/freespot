@@ -8,4 +8,4 @@ Group members:
 * [Leslie Hochszstein](https://github.com/lhochsz)
 * [Kirsten Humphreys](https://github.com/kirstenhumphreys)
 
-[Trello](https://trello.com/b/O3ZXyAv8/project4-railsapi) for this project.
+The [Trello](https://trello.com/b/O3ZXyAv8/project4-railsapi) for this project is linked within.
