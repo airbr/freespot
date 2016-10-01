@@ -803,3 +803,13 @@ Processing by Rails::WelcomeController#index as HTML
 Completed 200 OK in 18ms (Views: 8.4ms | ActiveRecord: 0.0ms)
 
 
+Started GET "/" for ::1 at 2016-10-01 15:58:39 -0400
+Processing by StaticPagesController#home as HTML
+  Rendering static_pages/home.html.erb within layouts/application
+  Rendered static_pages/home.html.erb within layouts/application (2.9ms)
+  Rendered layouts/_navigation_links.html.erb (0.6ms)
+  Rendered layouts/_navigation.html.erb (5.0ms)
+  Rendered layouts/_messages.html.erb (1.0ms)
+Completed 200 OK in 635ms (Views: 621.8ms | ActiveRecord: 0.0ms)
+
+
