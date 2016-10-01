@@ -23,3 +23,11 @@ module Park4
     # -- all .rb files in that directory are automatically loaded.
   end
 end
+
+module park4
+  class Application < Rails::Application
+
+    config.generators do |g|
+      g.orm             :active_record
+      g.template_engine :erb
+    end
