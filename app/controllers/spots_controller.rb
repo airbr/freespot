@@ -1,10 +1,11 @@
 class SpotsController < ApplicationController
+  before_action :authenticate_user!
   before_action :set_spot, only: [:show, :edit, :update, :destroy]
 
   # GET /spots
   # GET /spots.json
   def index
-    @spots = Spot.order(created_at: :desc)
+    @spots = current_user.spots.order(created_at: :desc)
   end
 
   # GET /spots/1
@@ -25,6 +26,7 @@ class SpotsController < ApplicationController
   # POST /spots.json
   def create
     @spot = Spot.new(spot_params)
+    @spot.user = current_user        # associate the new todo to the current_user
 
     respond_to do |format|
       if @spot.save
@@ -65,6 +67,7 @@ class SpotsController < ApplicationController
     # Use callbacks to share common setup or constraints between actions.
     def set_spot
       @spot = Spot.find(params[:id])
+      redirect_to root_url, notice: 'Access Denied!' unless current_user.id == @spot.user.id
     end
 
     # Never trust parameters from the scary internet, only allow the white list through.

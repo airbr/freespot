@@ -1,5 +1,6 @@
 class Spot < ApplicationRecord
   validates :address, presence: true
+  belongs_to :user
 
   # before_save :default_values
 
