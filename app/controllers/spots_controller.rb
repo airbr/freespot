@@ -2,11 +2,6 @@ class SpotsController < ApplicationController
   before_action :authenticate_user!
   before_action :set_spot, only: [:show, :edit, :update, :destroy, :city]
 
-  # All spots -> city
-  def city
-    @spots = Spot.all
-  end
-
   # GET /spots
   # GET /spots.json
   def index

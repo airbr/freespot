@@ -4,4 +4,9 @@ class StaticPagesController < ApplicationController
 
   def about
   end
+
+    # All spots -> city
+  def city
+    @spots = Spot.all
+  end
 end
