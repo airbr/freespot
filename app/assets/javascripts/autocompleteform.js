@@ -1,85 +1,160 @@
-$locationInfo = {
-  geocode: null,
-  streetNumber: null,
-  street: null,
-  city: null,
-  state: null,
-  country: null,
-  postalCode: null,
-  reset: function () {
-    this.geocode = null;
-    this.streetNumber = null;
-    this.street = null;
-    this.city = null;
-    this.state = null;
-    this.country = null;
-    this.postalCode = null;
-  }
+// This example displays an address form, using the autocomplete feature
+// of the Google Places API to help users fill in the information.
+
+// This example requires the Places library. Include the libraries=places
+// parameter when you first load the API. For example:
+// <script src="https://maps.googleapis.com/maps/api/js?key=YOUR_API_KEY&libraries=places">
+
+var placeSearch, autocomplete;
+var componentForm = {
+  street_number: 'short_name',
+  route: 'long_name',
+  locality: 'long_name',
+  administrative_area_level_1: 'short_name',
+  country: 'long_name',
+  postal_code: 'short_name'
 };
 
-googleAutocomplete = {
-  autocompleteField: function (fieldId) {
-    autocomplete = new google.maps.places.Autocomplete(document.getElementById(fieldId)), { types: ['geocode'] };
-    google.maps.event.addListener(autocomplete, 'place_changed', function() {
+function initAutocomplete() {
+  // Create the autocomplete object, restricting the search to geographical
+  // location types.
+  autocomplete = new google.maps.places.Autocomplete(
+      /** @type {!HTMLInputElement} */(document.getElementById('autocomplete')),
+      {types: ['geocode']});
 
-      // Segment results into usable parts
-      var place = autocomplete.getPlace(),
-          address = place.address_components,
-          latLng = place.geometry.location.lat() + ' ' + place.geometry.location.lng();
+  // When the user selects an address from the dropdown, populate the address
+  // fields in the form.
+  autocomplete.addListener('place_changed', fillInAddress);
+}
 
-      // Reset location object
-      $locationInfo.reset();
+function fillInAddress() {
+  // Get the place details from the autocomplete object.
+  var place = autocomplete.getPlace();
 
-      // Save address components (US only)
-      $locationInfo.geocode = latLng;
-      for(var i=0; i<address.length; i++) {
-        var component = address[i].types[0];
-        switch (component) {
-          case 'street_number':
-            $locationInfo.streetNumber = address[i]['long_name'];
-            break;
-          case 'route':
-            $locationInfo.street = address[i]['long_name'];
-            break;
-          case 'locality':
-            $locationInfo.city = address[i]['long_name'];
-            break;
-          case 'administrative_area_level_1':
-            $locationInfo.state = address[i]['long_name'];
-            break;
-          case 'country':
-            $locationInfo.country = address[i]['long_name'];
-            break;
-          case 'postal_code':
-            $locationInfo.postalCode = address[i]['long_name'];
-            break;
-          default:
-            break;
-        }
-      }
-
-      // Example output
-      $('#output').html(JSON.stringify($locationInfo, null, 4));
-
-    });
+  for (var component in componentForm) {
+    document.getElementById(component).value = '';
+    document.getElementById(component).disabled = false;
   }
-};
 
-function initialize() {
-  console.log('initialize called.');
-  // Attach listener to field
-  googleAutocomplete.autocompleteField('autoField');
-
-  //Bias the autocomplete object to the account's geographical location,
-  //as supplied by the browser's 'navigator.geolocation' object.
-  function geolocate() {
-      if (navigator.geolocation) {
-          navigator.geolocation.getCurrentPosition(function(position) {
-              var geolocation = new google.maps.LatLng(
-                  position.coords.latitude, position.coords.longitude);
-              autocomplete.setBounds(new google.maps.LatLngBounds(geolocation,
-                  geolocation));
-          });
-      }
+  // Get each component of the address from the place details
+  // and fill the corresponding field on the form.
+  for (var i = 0; i < place.address_components.length; i++) {
+    var addressType = place.address_components[i].types[0];
+    if (componentForm[addressType]) {
+      var val = place.address_components[i][componentForm[addressType]];
+      document.getElementById(addressType).value = val;
+    }
   }
 }
+
+// Bias the autocomplete object to the user's geographical location,
+// as supplied by the browser's 'navigator.geolocation' object.
+function geolocate() {
+  if (navigator.geolocation) {
+    navigator.geolocation.getCurrentPosition(function(position) {
+      var geolocation = {
+        lat: position.coords.latitude,
+        lng: position.coords.longitude
+      };
+      var circle = new google.maps.Circle({
+        center: geolocation,
+        radius: position.coords.accuracy
+      });
+      autocomplete.setBounds(circle.getBounds());
+    });
+  }
+}
+
+// The code below is an alternative that produces a JSON output of the
+// autocomplete form, taken from a CodePen example forked below at:
+// https://codepen.io/airbridge/pen/RGjAjx?editors=1010
+// It is kept in case helpful later, was working as at
+// present commit:
+// d23e8ff
+
+
+// $locationInfo = {
+//   geocode: null,
+//   streetNumber: null,
+//   street: null,
+//   city: null,
+//   state: null,
+//   country: null,
+//   postalCode: null,
+//   reset: function () {
+//     this.geocode = null;
+//     this.streetNumber = null;
+//     this.street = null;
+//     this.city = null;
+//     this.state = null;
+//     this.country = null;
+//     this.postalCode = null;
+//   }
+// };
+
+// googleAutocomplete = {
+//   autocompleteField: function (fieldId) {
+//     autocomplete = new google.maps.places.Autocomplete(document.getElementById(fieldId)), { types: ['geocode'] };
+//     google.maps.event.addListener(autocomplete, 'place_changed', function() {
+
+//       // Segment results into usable parts
+//       var place = autocomplete.getPlace(),
+//           address = place.address_components,
+//           latLng = place.geometry.location.lat() + ' ' + place.geometry.location.lng();
+
+//       // Reset location object
+//       $locationInfo.reset();
+
+//       // Save address components (US only)
+//       $locationInfo.geocode = latLng;
+//       for(var i=0; i<address.length; i++) {
+//         var component = address[i].types[0];
+//         switch (component) {
+//           case 'street_number':
+//             $locationInfo.streetNumber = address[i]['long_name'];
+//             break;
+//           case 'route':
+//             $locationInfo.street = address[i]['long_name'];
+//             break;
+//           case 'locality':
+//             $locationInfo.city = address[i]['long_name'];
+//             break;
+//           case 'administrative_area_level_1':
+//             $locationInfo.state = address[i]['long_name'];
+//             break;
+//           case 'country':
+//             $locationInfo.country = address[i]['long_name'];
+//             break;
+//           case 'postal_code':
+//             $locationInfo.postalCode = address[i]['long_name'];
+//             break;
+//           default:
+//             break;
+//         }
+//       }
+
+//       // Example output
+//       $('#output').html(JSON.stringify($locationInfo, null, 4));
+
+//     });
+//   }
+// };
+
+// function initialize() {
+//   console.log('initialize called.');
+//   // Attach listener to field
+//   googleAutocomplete.autocompleteField('autoField');
+
+//   //Bias the autocomplete object to the account's geographical location,
+//   //as supplied by the browser's 'navigator.geolocation' object.
+//   function geolocate() {
+//       if (navigator.geolocation) {
+//           navigator.geolocation.getCurrentPosition(function(position) {
+//               var geolocation = new google.maps.LatLng(
+//                   position.coords.latitude, position.coords.longitude);
+//               autocomplete.setBounds(new google.maps.LatLngBounds(geolocation,
+//                   geolocation));
+//           });
+//       }
+//   }
+// }
