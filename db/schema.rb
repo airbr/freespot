@@ -24,6 +24,13 @@ ActiveRecord::Schema.define(version: 20161002171621) do
     t.index ["user_id"], name: "index_spots_on_user_id", using: :btree
   end
 
+  create_table "todos", force: :cascade do |t|
+    t.string   "title",      null: false
+    t.boolean  "completed",  null: false
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+  end
+
   create_table "users", force: :cascade do |t|
     t.string   "email",                  default: "", null: false
     t.string   "encrypted_password",     default: "", null: false
