@@ -8,5 +8,10 @@ class StaticPagesController < ApplicationController
     # All spots -> city
   def city
     @spots = Spot.all
+    @hash = Gmaps4rails.build_markers(@spots) do |spot, marker|
+      marker.lat spot.latitude
+      marker.lng spot.longitude
+      marker.infowindow spot.description
+    end
   end
 end
