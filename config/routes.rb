@@ -1,9 +1,19 @@
 Rails.application.routes.draw do
-  resources :todos
+
+
+  #Static pages
   root to: 'static_pages#home'
   get 'home', to: 'static_pages#home', as: 'home'
   get 'about', to: 'static_pages#about', as: 'about'
-  get 'todos/:id/toggle_completed', to: 'todos#toggle_completed', as: 'toggle'
+  get 'city', to: 'static_pages#city', as: 'city'
+
+  #Devise
+  devise_for :users
+  get 'user_root', to: 'spots#index', as: :user_root
+
+  #Spots
+   resources :spots
+
 
   # For details on the DSL available within this file, see http://guides.rubyonrails.org/routing.html
 end

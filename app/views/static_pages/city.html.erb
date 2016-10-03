@@ -1,0 +1,24 @@
+<% provide(:title, 'City') %>
+<div class="text-center jumbotron">
+  <h1>City-Wide Spots</h1>
+  <h3>View spots around the city.</h3>
+  <br/>
+</div>
+
+<div class="table-responsive">
+  <table class="table table-striped table-bordered table-hover">
+    <thead>
+      <tr>
+            <th>Address</th>
+            <th>Time limit</th>
+      </tr>
+    </thead>
+
+    <tbody>
+      <%= content_tag_for(:tr, @spots) do |spot| %>
+            <td><%= spot.address %></td>
+            <td><%= spot.time_limit %></td>
+      <% end %>
+    </tbody>
+  </table>
+</div>

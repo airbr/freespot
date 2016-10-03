@@ -1,6 +1,8 @@
 <% provide(:title, 'Home') %>
 <div class="text-center jumbotron">
-  <h1>Welcome to the TODO App</h1>
-  <h3>This is the home page for the Rails TODO App with AuthN and AuthZ.</h3>
+  <h1>Welcome to Free Spot</h1>
+  <h3>This is the home page for the Rails Free Parking App with AuthN and AuthZ.</h3>
   <br/>
+  <%= link_to "Sign up now!", new_user_registration_path, class: "btn btn-large btn-primary" %>
+  <%= link_to "Sign in",      new_user_session_path,      class: "btn btn-large btn-primary" %>
 </div>
