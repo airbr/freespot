@@ -12,26 +12,18 @@
             <th>Title</th>
             <th>Address</th>
             <th>Time limit</th>
-            <th>Latitude</th>
-            <th>Longitude</th>
             <th>Description</th>
-            <th>Show</th>
-            <th>Edit</th>
-            <th>Destroy</th>
+            <th></th>
       </tr>
     </thead>
 
     <tbody>
       <%= content_tag_for(:tr, @spots) do |spot| %>
-            <td><%= spot.title %></td>
+            <td><%= link_to spot.title, spot %></td>
             <td><%= spot.address %></td>
             <td><%= spot.time_limit %></td>
-            <td><%= spot.latitude %></td>
-            <td><%= spot.longitude %></td>
             <td><%= spot.description %></td>
-            <td><%= link_to 'Show', spot %></td>
-        <td><%= link_to 'Edit', edit_spot_path(spot) %></td>
-        <td><%= link_to 'Destroy', spot, method: :delete, data: { confirm: 'Are you sure?' } %></td>
+        <td><div class="button alert"> <%= link_to 'x', spot, method: :delete, data: { confirm: 'Are you sure?' } %></div></td>
       <% end %>
     </tbody>
   </table>
