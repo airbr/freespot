@@ -20,30 +20,6 @@
 
 @import "foundation_and_overrides";
 
-body {
-  padding-top: 10px;
-}
-
-.page-header {
-  a.btn {
-    float: right;
-  }
-
-  a.btn + a.btn {
-    margin-right: 8px;
-  }
-}
-
-input[type="radio"], input[type="checkbox"] {
-  width: initial;
-  height: initial;
-  margin-top: 7px;
-}
-
-main {
-  margin: 20px auto;
-  width: 800px;
-}
 
 .spots {
   th, td {
