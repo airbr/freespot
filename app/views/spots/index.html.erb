@@ -1,13 +1,9 @@
 <div class="page-header">
-  <%= link_to new_spot_path, class: 'btn btn-primary' do %>
-    <span class="glyphicon glyphicon-plus"></span>
-    New Spot
-  <% end %>
   <h1>Listing spots</h1>
 </div>
 
 <div class="table-responsive">
-  <table class="table table-striped table-bordered table-hover">
+  <table class="hover">
     <thead>
       <tr>
             <th>Title</th>
@@ -37,3 +33,8 @@
     </tbody>
   </table>
 </div>
+
+<%= link_to new_spot_path, class: 'button center' do %>
+  <span class="glyphicon glyphicon-plus"></span>
+  New Spot
+<% end %>
