@@ -52,13 +52,6 @@
         handler.bounds.extendWith(markers);
         handler.fitMapToBounds();
       });
-
-      $("<td />")
-     .html("Point"+i)
-     .click(function(){
-       map.panTo(marker.getLatLng());
-     })
-     .appendTo("@spot.address");
     </script>
     </div>
 
