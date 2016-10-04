@@ -6,7 +6,7 @@ class Spot < ApplicationRecord
   after_validation :geocode
 
   def self.search(search)
-    where("title || address ILIKE ?", "%#{search}%")
+    where("title || address || description ILIKE ?", "%#{search}%")
   end
 
   # before_save :default_values
