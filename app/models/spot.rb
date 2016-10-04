@@ -5,6 +5,10 @@ class Spot < ApplicationRecord
   geocoded_by :address
   after_validation :geocode
 
+  def self.search(search)
+    where("title || address ILIKE ?", "%#{search}%")
+  end
+
   # before_save :default_values
 
   private

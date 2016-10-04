@@ -8,6 +8,18 @@
   <br/>
 </div>
 
+
+<%= form_tag(city_path, :method => "get", id: "search-form") do %>
+  <%= text_field_tag :search, params[:search], placeholder: "Search Spots" %>
+  <%= submit_tag "Search" %>
+<% end %>
+
+<% if @spots.present? %>
+  <% @spots %>
+<% else %>
+  <p>There are no posts containing the term(s) <%= params[:search] %>.</p>
+<% end %>
+
 <div class="table-responsive">
   <table class="table table-striped table-bordered table-hover">
     <thead>
