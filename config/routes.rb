@@ -2,8 +2,8 @@ Rails.application.routes.draw do
 
 
   #Static pages
-  root to: 'static_pages#home'
-  get 'home', to: 'static_pages#home', as: 'home'
+  root to: 'static_pages#city'
+  get 'home', to: 'static_pages#city', as: 'home'
   get 'about', to: 'static_pages#about', as: 'about'
   get 'city', to: 'static_pages#city', as: 'city'
 
