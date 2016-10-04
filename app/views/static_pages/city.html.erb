@@ -27,6 +27,7 @@
       <table class="table-hover">
         <thead>
           <tr>
+                <th>Title</th>
                 <th>Address</th>
                 <th>Time limit</th>
           </tr>
@@ -34,6 +35,7 @@
 
         <tbody>
           <%= content_tag_for(:tr, @spots) do |spot| %>
+                <td><%= link_to spot.title, spot %></td>
                 <td><%= spot.address %></td>
                 <td><%= spot.time_limit %></td>
           <% end %>
@@ -52,13 +54,6 @@
         handler.bounds.extendWith(markers);
         handler.fitMapToBounds();
       });
-
-      $("<td />")
-     .html("Point"+i)
-     .click(function(){
-       map.panTo(marker.getLatLng());
-     })
-     .appendTo("@spot.address");
     </script>
     </div>
 
