@@ -23,8 +23,8 @@
       <p>There are no posts containing the term(s) <%= params[:search] %>.</p>
     <% end %>
 
-    <div class="table-responsive">
-      <table class="table-hover">
+    <div class="table-scroll">
+      <table class="hover">
         <thead>
           <tr>
                 <th>Address</th>
@@ -42,8 +42,8 @@
     </div>
   </div>
 
-  <div class="columns">
-      <div id="map" style='max-width: 800px; height: 800px;'></div>
+  <div class="columns flex-video">
+      <div id="map" style='max-width: 800px; height: 600px;'></div>
 
     <script type="text/javascript">
       handler = Gmaps.build('Google');

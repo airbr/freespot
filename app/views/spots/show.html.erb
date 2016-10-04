@@ -1,9 +1,10 @@
+
 <div class="page-header">
-  <%= link_to spots_path, class: 'btn btn-default' do %>
+  <%= link_to spots_path, class: 'button' do %>
     <span class="glyphicon glyphicon-list-alt"></span>
     Back
   <% end %>
-  <%= link_to edit_spot_path(@spot), class: 'btn btn-primary' do %>
+  <%= link_to edit_spot_path(@spot), class: 'button' do %>
     <span class="glyphicon glyphicon-pencil"></span>
     Edit
   <% end %>
@@ -21,5 +22,3 @@
   <dd><%= @spot.created_at %></dd>
 
 </dl>
-
-
