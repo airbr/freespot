@@ -10,10 +10,18 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20161003180013) do
+ActiveRecord::Schema.define(version: 20161004193556) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
+
+  create_table "comments", force: :cascade do |t|
+    t.integer  "spot_id"
+    t.text     "body"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+    t.index ["spot_id"], name: "index_comments_on_spot_id", using: :btree
+  end
 
   create_table "spots", force: :cascade do |t|
     t.string   "time_limit"
@@ -26,13 +34,6 @@ ActiveRecord::Schema.define(version: 20161003180013) do
     t.text     "description"
     t.string   "title"
     t.index ["user_id"], name: "index_spots_on_user_id", using: :btree
-  end
-
-  create_table "todos", force: :cascade do |t|
-    t.string   "title",      null: false
-    t.boolean  "completed",  null: false
-    t.datetime "created_at", null: false
-    t.datetime "updated_at", null: false
   end
 
   create_table "users", force: :cascade do |t|
