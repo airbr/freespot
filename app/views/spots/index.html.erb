@@ -24,7 +24,7 @@
                 <!-- <td><%= spot.address %></td> -->
                 <td><%= spot.time_limit %></td>
                 <td><%= spot.description %></td>
-            <td><div class="button alert"> <%= link_to 'x', spot, method: :delete, data: { confirm: 'Are you sure?' } %></div></td>
+            <td><div class="button alert"><%= link_to 'x', spot, method: :delete, data: { confirm: 'Are you sure?' } %></div></td>
           <% end %>
         </tbody>
       </table>
