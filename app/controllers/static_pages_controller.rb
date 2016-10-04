@@ -16,7 +16,7 @@ class StaticPagesController < ApplicationController
     @hash = Gmaps4rails.build_markers(@spots) do |spot, marker|
       marker.lat spot.latitude
       marker.lng spot.longitude
-      marker.infowindow spot.description
+      marker.infowindow spot.address
     end
   end
 end

@@ -6,6 +6,11 @@ class SpotsController < ApplicationController
   # GET /spots.json
   def index
     @spots = current_user.spots.order(created_at: :desc)
+    @hash = Gmaps4rails.build_markers(@spots) do |spot, marker|
+      marker.lat spot.latitude
+      marker.lng spot.longitude
+      marker.infowindow spot.address
+    end
   end
 
   # GET /spots/1
