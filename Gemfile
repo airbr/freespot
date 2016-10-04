@@ -30,8 +30,11 @@ gem 'devise'
 gem 'geocoder'
 gem 'gmaps4rails'
 
-# Added Bootrstrap gem
+# Added Foundation gem
 gem 'foundation-rails'
+
+# Added FontAweseme gem for icons
+gem 'font-awesome-sass'
 
 # Added Pry, Bootstrap Generators
 gem 'bootstrap-generators', '~> 3.3.4'
