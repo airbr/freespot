@@ -30,6 +30,9 @@ gem 'devise'
 gem 'geocoder'
 gem 'gmaps4rails'
 
+# Added Bootrstrap gem
+gem 'foundation-rails'
+
 # Added Pry, Bootstrap Generators
 gem 'bootstrap-generators', '~> 3.3.4'
 gem 'record_tag_helper', '~> 1.0'
