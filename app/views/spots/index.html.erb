@@ -8,8 +8,7 @@
 <div class="row">
     <div class="small-2 large-4 columns">
       <%= link_to new_spot_path, class: 'expanded button' do %>
-        <span class="glyphicon glyphicon-plus"></span>
-        Add a New Spot
+        Add a New Spot <i class="fa fa-car" aria-hidden="true"></i>
       <% end %>
       <table class="hover">
         <tbody>
@@ -18,7 +17,9 @@
                 <!-- <td><%= spot.address %></td> -->
                 <td><%= spot.time_limit %></td>
                 <td><%= spot.description %></td>
-            <td><div class="button alert"><%= link_to 'x', spot, method: :delete, data: { confirm: 'Are you sure?' } %></div></td>
+            <td><%= link_to spot, method: :delete, data: { confirm: 'Are you sure?' }, class: 'button alert' do %>
+              <i class="fa fa-times-circle" aria-hidden="true"></i>
+              <% end %></td>
           <% end %>
         </tbody>
       </table>
