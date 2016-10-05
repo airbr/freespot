@@ -1,6 +1,5 @@
 class CommentsController < ApplicationController
     before_action :authenticate_user!
-    before_action :set_comment, only: [:show, :edit, :update, :destroy, :city, :title, :description]
 
   def create
     @spot = Spot.find(params[:spot_id])
@@ -31,10 +30,7 @@ class CommentsController < ApplicationController
 
   private
 
-  def set_comment
-      @comment = Comment.find(params[:user_id])
-      redirect_to root_url, notice: 'Access Denied!' unless current_user.id == @comment.user.id
-  end
+
 
   def comment_params
     params.require(:comment).permit(:body)

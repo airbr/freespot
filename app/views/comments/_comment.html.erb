@@ -5,9 +5,11 @@
     <%= comment.body %>
   </p>
   <p>
-    <%= button_to 'Delete', [comment.spot, comment],
+     <% if current_user.id == comment.user.id %>
+      <%= button_to 'Delete', [comment.spot, comment],
                 :method => :delete,
                 data: { confirm: 'Are you sure?' }
                 %>
+    <% end %>
   </p>
 <% end %>
