@@ -1,12 +1,13 @@
-
 <div class="page-header">
   <%= link_to spots_path, class: 'button' do %>
     <span class="glyphicon glyphicon-list-alt"></span>
     Back
   <% end %>
-  <%= link_to edit_spot_path(@spot), class: 'button' do %>
-    <span class="glyphicon glyphicon-pencil"></span>
-    Edit
+  <% if current_user.id == @spot.user.id %>
+    <%= link_to edit_spot_path(@spot), class: 'button' do %>
+      <span class="glyphicon glyphicon-pencil"></span>
+      Edit
+    <% end %>
   <% end %>
   <h1>Show spot</h1>
 </div>
