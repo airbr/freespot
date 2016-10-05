@@ -37,7 +37,7 @@ gem 'foundation-rails'
 gem 'font-awesome-sass'
 
 # Added Pry, Bootstrap Generators
-gem 'bootstrap-generators', '~> 3.3.4'
+# gem 'bootstrap-generators', '~> 3.3.4'
 gem 'record_tag_helper', '~> 1.0'
 
 gem 'bcrypt', '~> 3.1.7'                # uncomment this line
