@@ -25,6 +25,21 @@
 
 .spots {
   th, td {
-    text-align:center
+    text-align:center;
   }
 }
+
+a {
+  color: black;
+}
+
+#example-menu {
+  background-color: #57B8FF;
+}
+
+.signup {
+  max-width: 800px;
+  margin: 0 auto;
+}
+
+$table-row-stripe-hover: #CEE5F2;

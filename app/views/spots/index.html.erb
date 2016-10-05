@@ -2,22 +2,16 @@
 <script src="//cdn.rawgit.com/mahnunchik/markerclustererplus/master/dist/markerclusterer.min.js"></script>
 <script src='//cdn.rawgit.com/printercu/google-maps-utility-library-v3-read-only/master/infobox/src/infobox_packed.js' type='text/javascript'></script> <!-- only if you need custom infoboxes -->
 <div class="text-center">
-  <h1>Listing spots</h1>
+  <h1>Your Spots</h1>
 </div>
 
 <div class="row">
     <div class="small-2 large-4 columns">
+      <%= link_to new_spot_path, class: 'expanded button' do %>
+        <span class="glyphicon glyphicon-plus"></span>
+        Add a New Spot
+      <% end %>
       <table class="hover">
-        <thead>
-          <tr>
-                <th>Title</th>
-                <th>Address</th>
-                <th>Time limit</th>
-                <th>Description</th>
-                <th></th>
-          </tr>
-        </thead>
-
         <tbody>
           <%= content_tag_for(:tr, @spots) do |spot| %>
                 <td><%= link_to spot.title, spot %></td>
@@ -28,10 +22,6 @@
           <% end %>
         </tbody>
       </table>
-      <%= link_to new_spot_path, class: 'expanded button' do %>
-        <span class="glyphicon glyphicon-plus"></span>
-        New Spot
-      <% end %>
     </div>
 
 
