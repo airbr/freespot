@@ -22,6 +22,21 @@
 @import "font-awesome-sprockets";
 @import "font-awesome";
 
+$body-background: #CEE5F2;
+
+.no-js {
+  @include breakpoint(small only) {
+    .top-bar {
+      display: none;
+    }
+  }
+
+  @include breakpoint(medium) {
+    .title-bar {
+      display: none;
+    }
+  }
+}
 
 .spots {
   th, td {
@@ -42,4 +57,8 @@ a {
   margin: 0 auto;
 }
 
-$table-row-stripe-hover: #CEE5F2;
+.edit-spot, .spot-page {
+  .button {
+    margin-top: 10px;
+  }
+}
