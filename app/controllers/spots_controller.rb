@@ -25,6 +25,7 @@ class SpotsController < ApplicationController
 
   # GET /spots/1/edit
   def edit
+    redirect_to root_url, notice: 'Access Denied!' unless current_user.id == @spot.user.id
   end
 
   # POST /spots
