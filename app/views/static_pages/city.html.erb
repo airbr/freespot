@@ -2,15 +2,12 @@
 <script src="//cdn.rawgit.com/mahnunchik/markerclustererplus/master/dist/markerclusterer.min.js"></script>
 <script src='//cdn.rawgit.com/printercu/google-maps-utility-library-v3-read-only/master/infobox/src/infobox_packed.js' type='text/javascript'></script> <!-- only if you need custom infoboxes -->
 
-  <% provide(:title, 'City') %>
-  <div class="text-center">
-    <h1>City-Wide Spots</h1>
-    <h3>View spots around the city.</h3>
-    <br/>
-  </div>
-
-<div class="row">
-  <div class ="small-2 large-4 columns">
+<div class="row align-left medium-unstack">
+  <div class ="small-12 medium-6 large-4 column">
+    <% provide(:title, 'City') %>
+    <div class="page-header text-center">
+      <h1>City Spots</h1>
+    </div>
     <%= form_tag(city_path, :method => "get", id: "search-form") do %>
       <%= text_field_tag :search, params[:search], placeholder: "Search Spots" %>
       <%= submit_tag "Search" %>
@@ -23,7 +20,7 @@
       <p>There are no posts containing the term(s) <%= params[:search] %>.</p>
     <% end %>
 
-    <div class="table-scroll">
+    <div class="table spots-content">
       <table class="hover">
         <thead>
           <tr>
@@ -45,7 +42,7 @@
   </div>
 
   <div class="columns flex-video">
-      <div id="map" style='max-width: 800px; height: 600px;'></div>
+      <div id="map" style='max-width: 900px; height: 700px;'></div>
 
     <script type="text/javascript">
       handler = Gmaps.build('Google');

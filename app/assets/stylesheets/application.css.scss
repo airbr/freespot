@@ -71,11 +71,15 @@ a {
 // MY SPOTS PAGE
 
 .spots-content {
-  height: 50em;
+  height: 32.5em;
   overflow: auto;
 }
 
 .delete-button {
+  background-color: rgba(0, 0, 0, 0);
+}
+
+.delete-button:hover {
   background-color: rgba(0, 0, 0, 0);
 }
 
