@@ -10,9 +10,9 @@
               <tbody>
                 <%= content_tag_for(:tr, @spots) do |spot| %>
                       <td><%= link_to spot.title, spot %></td>
-                      <!-- <td><%= spot.address %></td> -->
+                      <td><%= spot.address %></td>
                       <td><%= spot.time_limit %></td>
-                      <td><%= spot.description %></td>
+                      <!-- <td><%= spot.description %></td> -->
                   <td><%= link_to spot, method: :delete, data: { confirm: 'Are you sure?' }, class: 'button delete-button' do %>
                     <i class="fa fa-times-circle fa-2x" aria-hidden="true"></i>
                     <% end %></td>

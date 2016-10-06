@@ -31,6 +31,7 @@ $gh-yellow: #FFE74C;
 $gh-red: #E15554;
 $gh-grey: #CEE5F2;
 $gh-font: 'Raleway', sans-serif;
+$titlebar-menu-icon-color: black;
 
 
 // GENERAL STYLING
@@ -61,8 +62,12 @@ body {
 
 // NAV BAR STYLING
 
-#example-menu {
+#example-menu, .title-bar {
   background-color: $gh-yellow;
+  color: black;
+    button {
+      color: black;
+    }
 }
 
 #example-menu ul {
