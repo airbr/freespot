@@ -43,7 +43,7 @@
   <div class="form-group">
   <%= f.label :time_limit, class: "col-sm-2 control-label" %>
     <div class="col-sm-10" id="locationField">
-      <%= f.select :time_limit, options_for_select([['Unlimited','Unlimited'],['30 Minutes','30 Minutes'],['1 Hour','1 Hour'],['2 Hours','2 Hours'],['3 Hours','3 Hours'], ['4 Hours','4 Hours'], ['Other','Other']]), {}, {class:'form-control'} %>
+      <%= f.select :time_limit, options_for_select([['Unlimited'], ['30 Minutes'],['1 Hour'], ['2 Hours'], ['3 Hours'], ['4 Hours'],['Other']]) %>
       <%= f.text_field :time_limit, "data-depends-on" => "#spot_time_limit", "data-depends-on-value" => "Other" %>
     </div>
   </div>
@@ -57,56 +57,30 @@
 <% end %>
 
 <script type="text/javascript">
-  $(function() {
 
-    console.log('inline script from _form.html.erb');
+      $(function() {
+        var select = $('select#spot_time_limit');
+        var hidden = $('input#spot_time_limit');
 
-    $.fn.dependsOn = function(element, value) {
-      var elements = this;
-      var hideOrShow = function() {
-        var $this = $(this);
-        var showEm;
-        if ( $this.is('input[type="checkbox"]') ) {
-          showEm = $this.is(':checked');
-        } else if ($this.is('select')) {
-          var fieldValue = $this.find('option:selected').val();
-          console.log('hideOrShow: fieldValue:', fieldValue);
-          if (typeof(value) == 'undefined') {
-            console.log('A');
-            showEm = fieldValue && $.trim(fieldValue) != '';
-          } else if ($.isArray(value)) {
-            console.log('B');
-            showEm = $.inArray(fieldValue, value.map(function(v) {return v.toString()})) >= 0;
-          } else {
-            console.log('C');
-            showEm = value.toString() == fieldValue;
-          }
+        hidden.hide();
+        hidden.attr('disabled', true);
+
+        select.change(function() {
+          var fieldValue = select.find('option:selected').val();
+          console.log(fieldValue);
+
+        if (fieldValue === 'Other') {
+          hidden.show();
+          hidden.attr('disabled', false);
+
+          populate.val("Dude");
         } else {
-          console.log('hmm, nothing to do?');
+          hidden.hide();
+          hidden.attr('disabled', true);
         }
-        console.log('hideOrShow: returning', showEm);
-        elements.toggle(showEm);
-      }
-      //add change handler to element
-      $(element).change(hideOrShow);
-
-      //hide the dependent fields
-      $(element).each(hideOrShow);
-
-      return elements;
-    };
-
-    $('*[data-depends-on]').each(function() {
-      var $this = $(this);
-      var master = $this.data('dependsOn').toString();
-      var value = $this.data('dependsOnValue');
-      if (typeof(value) != 'undefined') {
-        $this.dependsOn(master, value);
-      } else {
-        $this.dependsOn(master);
-      }
+      });
     });
-  });
+
 </script>
 
     <script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyBsVKH8m8lqhOELJ347MN_m-M6-GRLlWhQ&libraries=places&callback=initAutocomplete"></script>

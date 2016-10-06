@@ -1,6 +1,6 @@
 class SpotsController < ApplicationController
   before_action :authenticate_user!
-  before_action :set_spot, only: [:show, :edit, :update, :destroy, :city, :title, :description]
+  before_action :set_spot, only: [:show, :edit, :update, :destroy, :city]
 
   # GET /spots
   # GET /spots.json
@@ -84,6 +84,6 @@ class SpotsController < ApplicationController
 
     # Never trust parameters from the scary internet, only allow the white list through.
     def spot_params
-      params.require(:spot).permit(:address, :time_limit, :title, :description)
+      params.require(:spot).permit(:address, :time_limit, :time_limit_other, :title, :description)
     end
 end
