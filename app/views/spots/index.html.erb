@@ -32,6 +32,22 @@
               markers = handler.addMarkers(<%=raw @hash.to_json %>);
               handler.bounds.extendWith(markers);
               handler.fitMapToBounds();
+                    if (markers.length == 0) {
+                      markers = handler.addMarkers([
+                      {
+                        "lat": 33.7738979,
+                        "lng": -84.3641902,
+                        "picture": {
+                          "url": "http://people.mozilla.com/~faaborg/files/shiretoko/firefoxIcon/firefox-32.png",
+                          "width":  32,
+                          "height": 32
+                        },
+                        "infowindow": "hello!"
+                      }
+                    ]);
+                    handler.bounds.extendWith(markers);
+                    handler.fitMapToBounds();
+              }
             });
           </script>
         </div>
