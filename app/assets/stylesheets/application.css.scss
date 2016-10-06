@@ -23,6 +23,8 @@
 @import "font-awesome";
 @import 'https://fonts.googleapis.com/css?family=Raleway:400,800';
 
+// COLOR PALATTE
+
 $gh-blue: #57B8FF;
 $gh-darkblue: #12355B;
 $gh-yellow: #FFE74C;
@@ -71,6 +73,14 @@ a {
 .spots-content {
   height: 50em;
   overflow: auto;
+}
+
+.delete-button {
+  background-color: rgba(0, 0, 0, 0);
+}
+
+.spots-content i {
+  color: red;
 }
 
 .signup .signin {
