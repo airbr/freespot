@@ -31,6 +31,7 @@ $gh-yellow: #FFE74C;
 $gh-red: #E15554;
 $gh-grey: #CEE5F2;
 
+
 // GENERAL STYLING
 
 h1 {
@@ -96,6 +97,13 @@ a {
     margin-top: 1em;
   }
 }
+
+// ERROR MESSAGE CALLOUTS
+
+.callout {
+  font-size: 12px;
+}
+
 
 
 // USED TO FIX MOBILE NAV BAR VISIBILITY UPON INITIAL LOADING
