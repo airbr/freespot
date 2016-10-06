@@ -93,6 +93,7 @@ a {
   }
 }
 
+
 // USED TO FIX MOBILE NAV BAR VISIBILITY UPON INITIAL LOADING
 .no-js {
   @include breakpoint(small only) {
@@ -106,4 +107,38 @@ a {
       display: none;
     }
   }
+}
+
+.aboutHeader{
+  text-align: center;
+  margin-top: 1em;
+}
+
+h4 {
+  text-align: center;
+}
+#developersSection {
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  text-align: center;
+}
+
+#technologiesSection {
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  text-align: center;
+}
+
+.developers {
+  margin: 0 1em;
+}
+
+.technologies {
+  margin: 0 1em;
+}
+
+#bigPin {
+  color: $gh-yellow;
 }

@@ -8,7 +8,7 @@ Rails.application.routes.draw do
 
   #Devise
   devise_for :users
-  get 'user_root', to: 'static_pages#city', as: :user_root
+  get 'city', to: 'static_pages#city', as: :user_root
 
   #Spots
   resources :spots
