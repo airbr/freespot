@@ -2,12 +2,9 @@
 <script src="//cdn.rawgit.com/mahnunchik/markerclustererplus/master/dist/markerclusterer.min.js"></script>
 <script src='//cdn.rawgit.com/printercu/google-maps-utility-library-v3-read-only/master/infobox/src/infobox_packed.js' type='text/javascript'></script> <!-- only if you need custom infoboxes -->
 <div class ="my-spots">
-  <div class="text-center">
-    <h1>Your Spots</h1>
-  </div>
-
     <div class="row">
         <div class="small-2 large-4 columns">
+          <h1>Your Spots</h1>
           <%= link_to new_spot_path, class: 'expanded button' do %>
             Add a New Spot <i class="fa fa-car" aria-hidden="true"></i>
           <% end %>
