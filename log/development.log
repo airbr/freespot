@@ -12899,3 +12899,588 @@ puma (3.6.0) lib/puma/server.rb:578:in `handle_request'
 puma (3.6.0) lib/puma/server.rb:415:in `process_client'
 puma (3.6.0) lib/puma/server.rb:275:in `block in run'
 puma (3.6.0) lib/puma/thread_pool.rb:116:in `block in spawn_thread'
+Started GET "/" for ::1 at 2016-10-06 17:31:07 -0400
+  [1m[36mActiveRecord::SchemaMigration Load (0.4ms)[0m  [1m[34mSELECT "schema_migrations".* FROM "schema_migrations"[0m
+Processing by StaticPagesController#city as HTML
+  [1m[36mSpot Load (0.9ms)[0m  [1m[34mSELECT "spots".* FROM "spots" ORDER BY created_at DESC[0m
+  Rendering static_pages/city.html.erb within layouts/application
+  Rendered static_pages/city.html.erb within layouts/application (7.2ms)
+  Rendered layouts/_navigation_links.html.erb (5.1ms)
+  Rendered layouts/_navigation.html.erb (7.0ms)
+Completed 200 OK in 808ms (Views: 754.7ms | ActiveRecord: 3.7ms)
+
+
+Started GET "/" for ::1 at 2016-10-06 17:33:34 -0400
+Processing by StaticPagesController#city as HTML
+  [1m[36mSpot Load (0.3ms)[0m  [1m[34mSELECT "spots".* FROM "spots" ORDER BY created_at DESC[0m
+  Rendering static_pages/city.html.erb within layouts/application
+  Rendered static_pages/city.html.erb within layouts/application (2.1ms)
+  [1m[36mUser Load (0.7ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 ORDER BY "users"."id" ASC LIMIT $2[0m  [["id", 5], ["LIMIT", 1]]
+  Rendered layouts/_navigation_links.html.erb (20.2ms)
+  Rendered layouts/_navigation.html.erb (21.8ms)
+Completed 200 OK in 157ms (Views: 149.4ms | ActiveRecord: 4.0ms)
+
+
+Started GET "/spots" for ::1 at 2016-10-06 17:33:38 -0400
+Processing by SpotsController#index as HTML
+  [1m[36mUser Load (0.4ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 ORDER BY "users"."id" ASC LIMIT $2[0m  [["id", 5], ["LIMIT", 1]]
+  [1m[36mSpot Load (0.4ms)[0m  [1m[34mSELECT "spots".* FROM "spots" WHERE "spots"."user_id" = $1 ORDER BY "spots"."created_at" DESC[0m  [["user_id", 5]]
+  Rendering spots/index.html.erb within layouts/application
+  Rendered spots/index.html.erb within layouts/application (1.4ms)
+  Rendered layouts/_navigation_links.html.erb (1.0ms)
+  Rendered layouts/_navigation.html.erb (2.4ms)
+Completed 200 OK in 166ms (Views: 143.7ms | ActiveRecord: 0.8ms)
+
+
+Started DELETE "/spots/32" for ::1 at 2016-10-06 17:33:41 -0400
+Processing by SpotsController#destroy as HTML
+  Parameters: {"authenticity_token"=>"Ddx1ju3gEZTzcMm9U2Dia1tieEmlKkC/vS07Nko5YAyOde8tm4K7vg3eQFLxVspP2lsLsMu5YEjGNKJjoBXadg==", "id"=>"32"}
+  [1m[36mUser Load (0.5ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 ORDER BY "users"."id" ASC LIMIT $2[0m  [["id", 5], ["LIMIT", 1]]
+  [1m[36mSpot Load (0.3ms)[0m  [1m[34mSELECT  "spots".* FROM "spots" WHERE "spots"."id" = $1 LIMIT $2[0m  [["id", 32], ["LIMIT", 1]]
+  [1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
+  [1m[35mSQL (0.3ms)[0m  [1m[31mDELETE FROM "spots" WHERE "spots"."id" = $1[0m  [["id", 32]]
+  [1m[35m (6.2ms)[0m  [1m[35mCOMMIT[0m
+Redirected to http://localhost:3000/spots
+Completed 302 Found in 17ms (ActiveRecord: 7.7ms)
+
+
+Started GET "/spots" for ::1 at 2016-10-06 17:33:41 -0400
+Processing by SpotsController#index as HTML
+  [1m[36mUser Load (0.3ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 ORDER BY "users"."id" ASC LIMIT $2[0m  [["id", 5], ["LIMIT", 1]]
+  [1m[36mSpot Load (0.2ms)[0m  [1m[34mSELECT "spots".* FROM "spots" WHERE "spots"."user_id" = $1 ORDER BY "spots"."created_at" DESC[0m  [["user_id", 5]]
+  Rendering spots/index.html.erb within layouts/application
+  Rendered spots/index.html.erb within layouts/application (1.1ms)
+  Rendered layouts/_navigation_links.html.erb (1.1ms)
+  Rendered layouts/_navigation.html.erb (3.3ms)
+Completed 200 OK in 157ms (Views: 153.2ms | ActiveRecord: 0.5ms)
+
+
+Started DELETE "/spots/31" for ::1 at 2016-10-06 17:33:44 -0400
+Processing by SpotsController#destroy as HTML
+  Parameters: {"authenticity_token"=>"o+Kn6mpJMPdMqZMegj06g91WHpFwfD7q01cDO6yczgogSz1JHCua3bIHGvEgCxKnXG9taB7vHh2oTppuRrB0cA==", "id"=>"31"}
+  [1m[36mUser Load (0.5ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 ORDER BY "users"."id" ASC LIMIT $2[0m  [["id", 5], ["LIMIT", 1]]
+  [1m[36mSpot Load (0.2ms)[0m  [1m[34mSELECT  "spots".* FROM "spots" WHERE "spots"."id" = $1 LIMIT $2[0m  [["id", 31], ["LIMIT", 1]]
+  [1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
+  [1m[35mSQL (0.2ms)[0m  [1m[31mDELETE FROM "spots" WHERE "spots"."id" = $1[0m  [["id", 31]]
+  [1m[35m (1.6ms)[0m  [1m[35mCOMMIT[0m
+Redirected to http://localhost:3000/spots
+Completed 302 Found in 6ms (ActiveRecord: 2.5ms)
+
+
+Started GET "/spots" for ::1 at 2016-10-06 17:33:44 -0400
+Processing by SpotsController#index as HTML
+  [1m[36mUser Load (0.4ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 ORDER BY "users"."id" ASC LIMIT $2[0m  [["id", 5], ["LIMIT", 1]]
+  [1m[36mSpot Load (0.3ms)[0m  [1m[34mSELECT "spots".* FROM "spots" WHERE "spots"."user_id" = $1 ORDER BY "spots"."created_at" DESC[0m  [["user_id", 5]]
+  Rendering spots/index.html.erb within layouts/application
+  Rendered spots/index.html.erb within layouts/application (1.3ms)
+  Rendered layouts/_navigation_links.html.erb (1.0ms)
+  Rendered layouts/_navigation.html.erb (2.9ms)
+Completed 200 OK in 150ms (Views: 145.8ms | ActiveRecord: 0.7ms)
+
+
+Started GET "/spots" for ::1 at 2016-10-06 17:34:13 -0400
+Processing by SpotsController#index as HTML
+  [1m[36mUser Load (0.3ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 ORDER BY "users"."id" ASC LIMIT $2[0m  [["id", 5], ["LIMIT", 1]]
+  [1m[36mSpot Load (0.2ms)[0m  [1m[34mSELECT "spots".* FROM "spots" WHERE "spots"."user_id" = $1 ORDER BY "spots"."created_at" DESC[0m  [["user_id", 5]]
+  Rendering spots/index.html.erb within layouts/application
+  Rendered spots/index.html.erb within layouts/application (0.8ms)
+  Rendered layouts/_navigation_links.html.erb (1.1ms)
+  Rendered layouts/_navigation.html.erb (2.9ms)
+Completed 200 OK in 162ms (Views: 158.8ms | ActiveRecord: 0.5ms)
+
+
+Started GET "/spots" for ::1 at 2016-10-06 17:35:38 -0400
+Processing by SpotsController#index as HTML
+  [1m[36mUser Load (0.3ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 ORDER BY "users"."id" ASC LIMIT $2[0m  [["id", 5], ["LIMIT", 1]]
+  [1m[36mSpot Load (0.2ms)[0m  [1m[34mSELECT "spots".* FROM "spots" WHERE "spots"."user_id" = $1 ORDER BY "spots"."created_at" DESC[0m  [["user_id", 5]]
+  Rendering spots/index.html.erb within layouts/application
+  Rendered spots/index.html.erb within layouts/application (0.9ms)
+  Rendered layouts/_navigation_links.html.erb (0.6ms)
+  Rendered layouts/_navigation.html.erb (1.9ms)
+Completed 200 OK in 147ms (Views: 142.9ms | ActiveRecord: 0.5ms)
+
+
+Started GET "/spots" for ::1 at 2016-10-06 17:35:46 -0400
+Processing by SpotsController#index as HTML
+  [1m[36mUser Load (0.4ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 ORDER BY "users"."id" ASC LIMIT $2[0m  [["id", 5], ["LIMIT", 1]]
+  [1m[36mSpot Load (0.3ms)[0m  [1m[34mSELECT "spots".* FROM "spots" WHERE "spots"."user_id" = $1 ORDER BY "spots"."created_at" DESC[0m  [["user_id", 5]]
+  Rendering spots/index.html.erb within layouts/application
+  Rendered spots/index.html.erb within layouts/application (0.9ms)
+  Rendered layouts/_navigation_links.html.erb (0.6ms)
+  Rendered layouts/_navigation.html.erb (1.8ms)
+Completed 200 OK in 147ms (Views: 142.4ms | ActiveRecord: 0.6ms)
+
+
+Started GET "/spots" for ::1 at 2016-10-06 17:36:06 -0400
+Processing by SpotsController#index as HTML
+  [1m[36mUser Load (0.3ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 ORDER BY "users"."id" ASC LIMIT $2[0m  [["id", 5], ["LIMIT", 1]]
+  [1m[36mSpot Load (0.2ms)[0m  [1m[34mSELECT "spots".* FROM "spots" WHERE "spots"."user_id" = $1 ORDER BY "spots"."created_at" DESC[0m  [["user_id", 5]]
+  Rendering spots/index.html.erb within layouts/application
+  Rendered spots/index.html.erb within layouts/application (0.7ms)
+  Rendered layouts/_navigation_links.html.erb (0.6ms)
+  Rendered layouts/_navigation.html.erb (1.9ms)
+Completed 200 OK in 146ms (Views: 142.0ms | ActiveRecord: 0.5ms)
+
+
+Started GET "/spots" for ::1 at 2016-10-06 17:36:17 -0400
+Processing by SpotsController#index as HTML
+  [1m[36mUser Load (0.3ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 ORDER BY "users"."id" ASC LIMIT $2[0m  [["id", 5], ["LIMIT", 1]]
+  [1m[36mSpot Load (0.2ms)[0m  [1m[34mSELECT "spots".* FROM "spots" WHERE "spots"."user_id" = $1 ORDER BY "spots"."created_at" DESC[0m  [["user_id", 5]]
+  Rendering spots/index.html.erb within layouts/application
+  Rendered spots/index.html.erb within layouts/application (0.8ms)
+  Rendered layouts/_navigation_links.html.erb (0.8ms)
+  Rendered layouts/_navigation.html.erb (2.5ms)
+Completed 200 OK in 147ms (Views: 143.5ms | ActiveRecord: 0.6ms)
+
+
+Started GET "/spots" for ::1 at 2016-10-06 17:50:16 -0400
+Processing by SpotsController#index as HTML
+  [1m[36mUser Load (0.4ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 ORDER BY "users"."id" ASC LIMIT $2[0m  [["id", 5], ["LIMIT", 1]]
+  [1m[36mSpot Load (0.3ms)[0m  [1m[34mSELECT "spots".* FROM "spots" WHERE "spots"."user_id" = $1 ORDER BY "spots"."created_at" DESC[0m  [["user_id", 5]]
+  Rendering spots/index.html.erb within layouts/application
+  Rendered spots/index.html.erb within layouts/application (0.9ms)
+  Rendered layouts/_navigation_links.html.erb (0.9ms)
+  Rendered layouts/_navigation.html.erb (2.5ms)
+Completed 200 OK in 129ms (Views: 124.8ms | ActiveRecord: 0.6ms)
+
+
+  
+ActionController::RoutingError (No route matches [GET] "/assets/underscore-min.map"):
+  
+actionpack (5.0.0.1) lib/action_dispatch/middleware/debug_exceptions.rb:53:in `call'
+web-console (3.3.1) lib/web_console/middleware.rb:131:in `call_app'
+web-console (3.3.1) lib/web_console/middleware.rb:28:in `block in call'
+web-console (3.3.1) lib/web_console/middleware.rb:18:in `catch'
+web-console (3.3.1) lib/web_console/middleware.rb:18:in `call'
+actionpack (5.0.0.1) lib/action_dispatch/middleware/show_exceptions.rb:31:in `call'
+railties (5.0.0.1) lib/rails/rack/logger.rb:36:in `call_app'
+railties (5.0.0.1) lib/rails/rack/logger.rb:24:in `block in call'
+activesupport (5.0.0.1) lib/active_support/tagged_logging.rb:70:in `block in tagged'
+activesupport (5.0.0.1) lib/active_support/tagged_logging.rb:26:in `tagged'
+activesupport (5.0.0.1) lib/active_support/tagged_logging.rb:70:in `tagged'
+railties (5.0.0.1) lib/rails/rack/logger.rb:24:in `call'
+sprockets-rails (3.2.0) lib/sprockets/rails/quiet_assets.rb:11:in `block in call'
+activesupport (5.0.0.1) lib/active_support/logger_silence.rb:20:in `silence'
+activesupport (5.0.0.1) lib/active_support/logger.rb:63:in `block (3 levels) in broadcast'
+activesupport (5.0.0.1) lib/active_support/logger_silence.rb:20:in `silence'
+activesupport (5.0.0.1) lib/active_support/logger.rb:61:in `block (2 levels) in broadcast'
+sprockets-rails (3.2.0) lib/sprockets/rails/quiet_assets.rb:11:in `call'
+actionpack (5.0.0.1) lib/action_dispatch/middleware/request_id.rb:24:in `call'
+rack (2.0.1) lib/rack/method_override.rb:22:in `call'
+rack (2.0.1) lib/rack/runtime.rb:22:in `call'
+activesupport (5.0.0.1) lib/active_support/cache/strategy/local_cache_middleware.rb:28:in `call'
+actionpack (5.0.0.1) lib/action_dispatch/middleware/executor.rb:12:in `call'
+actionpack (5.0.0.1) lib/action_dispatch/middleware/static.rb:136:in `call'
+rack (2.0.1) lib/rack/sendfile.rb:111:in `call'
+railties (5.0.0.1) lib/rails/engine.rb:522:in `call'
+puma (3.6.0) lib/puma/configuration.rb:225:in `call'
+puma (3.6.0) lib/puma/server.rb:578:in `handle_request'
+puma (3.6.0) lib/puma/server.rb:415:in `process_client'
+puma (3.6.0) lib/puma/server.rb:275:in `block in run'
+puma (3.6.0) lib/puma/thread_pool.rb:116:in `block in spawn_thread'
+Started GET "/spots/new" for ::1 at 2016-10-06 17:51:28 -0400
+Processing by SpotsController#new as HTML
+  [1m[36mUser Load (0.3ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 ORDER BY "users"."id" ASC LIMIT $2[0m  [["id", 5], ["LIMIT", 1]]
+  Rendering spots/new.html.erb within layouts/application
+  Rendered spots/_form.html.erb (11.5ms)
+  Rendered spots/new.html.erb within layouts/application (13.2ms)
+  Rendered layouts/_navigation_links.html.erb (0.7ms)
+  Rendered layouts/_navigation.html.erb (2.2ms)
+Completed 200 OK in 174ms (Views: 170.8ms | ActiveRecord: 0.3ms)
+
+
+Started POST "/spots" for ::1 at 2016-10-06 17:51:45 -0400
+Processing by SpotsController#create as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"21fRA+MSuk1yoSlqloaBRHX6lFYfxzMT8oNsiIvMcuKfqQxaCShOl8+dzKZG/weBnuyiJSurzaSdXLIkE3aqvQ==", "spot"=>{"title"=>"Test", "address"=>"Ponce City Market, Ponce De Leon Avenue Northeast, Atlanta, GA, United States", "time_limit"=>"Unlimited"}, "commit"=>"Create Spot"}
+  [1m[36mUser Load (0.7ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 ORDER BY "users"."id" ASC LIMIT $2[0m  [["id", 5], ["LIMIT", 1]]
+  [1m[35m (0.2ms)[0m  [1m[35mBEGIN[0m
+  [1m[35mSQL (0.9ms)[0m  [1m[32mINSERT INTO "spots" ("time_limit", "created_at", "updated_at", "user_id", "latitude", "longitude", "address", "title") VALUES ($1, $2, $3, $4, $5, $6, $7, $8) RETURNING "id"[0m  [["time_limit", "Unlimited"], ["created_at", 2016-10-06 21:51:46 UTC], ["updated_at", 2016-10-06 21:51:46 UTC], ["user_id", 5], ["latitude", 33.7722636], ["longitude", -84.3661896], ["address", "Ponce City Market, Ponce De Leon Avenue Northeast, Atlanta, GA, United States"], ["title", "Test"]]
+  [1m[35m (106.2ms)[0m  [1m[35mCOMMIT[0m
+Redirected to http://localhost:3000/spots
+Completed 302 Found in 730ms (ActiveRecord: 107.9ms)
+
+
+Started GET "/spots" for ::1 at 2016-10-06 17:51:46 -0400
+Processing by SpotsController#index as HTML
+  [1m[36mUser Load (0.3ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 ORDER BY "users"."id" ASC LIMIT $2[0m  [["id", 5], ["LIMIT", 1]]
+  [1m[36mSpot Load (0.2ms)[0m  [1m[34mSELECT "spots".* FROM "spots" WHERE "spots"."user_id" = $1 ORDER BY "spots"."created_at" DESC[0m  [["user_id", 5]]
+  Rendering spots/index.html.erb within layouts/application
+  Rendered spots/index.html.erb within layouts/application (1.4ms)
+  Rendered layouts/_navigation_links.html.erb (0.7ms)
+  Rendered layouts/_navigation.html.erb (2.1ms)
+Completed 200 OK in 146ms (Views: 141.1ms | ActiveRecord: 0.5ms)
+
+
+  
+ActionController::RoutingError (No route matches [GET] "/assets/underscore-min.map"):
+  
+actionpack (5.0.0.1) lib/action_dispatch/middleware/debug_exceptions.rb:53:in `call'
+web-console (3.3.1) lib/web_console/middleware.rb:131:in `call_app'
+web-console (3.3.1) lib/web_console/middleware.rb:28:in `block in call'
+web-console (3.3.1) lib/web_console/middleware.rb:18:in `catch'
+web-console (3.3.1) lib/web_console/middleware.rb:18:in `call'
+actionpack (5.0.0.1) lib/action_dispatch/middleware/show_exceptions.rb:31:in `call'
+railties (5.0.0.1) lib/rails/rack/logger.rb:36:in `call_app'
+railties (5.0.0.1) lib/rails/rack/logger.rb:24:in `block in call'
+activesupport (5.0.0.1) lib/active_support/tagged_logging.rb:70:in `block in tagged'
+activesupport (5.0.0.1) lib/active_support/tagged_logging.rb:26:in `tagged'
+activesupport (5.0.0.1) lib/active_support/tagged_logging.rb:70:in `tagged'
+railties (5.0.0.1) lib/rails/rack/logger.rb:24:in `call'
+sprockets-rails (3.2.0) lib/sprockets/rails/quiet_assets.rb:11:in `block in call'
+activesupport (5.0.0.1) lib/active_support/logger_silence.rb:20:in `silence'
+activesupport (5.0.0.1) lib/active_support/logger.rb:63:in `block (3 levels) in broadcast'
+activesupport (5.0.0.1) lib/active_support/logger_silence.rb:20:in `silence'
+activesupport (5.0.0.1) lib/active_support/logger.rb:61:in `block (2 levels) in broadcast'
+sprockets-rails (3.2.0) lib/sprockets/rails/quiet_assets.rb:11:in `call'
+actionpack (5.0.0.1) lib/action_dispatch/middleware/request_id.rb:24:in `call'
+rack (2.0.1) lib/rack/method_override.rb:22:in `call'
+rack (2.0.1) lib/rack/runtime.rb:22:in `call'
+activesupport (5.0.0.1) lib/active_support/cache/strategy/local_cache_middleware.rb:28:in `call'
+actionpack (5.0.0.1) lib/action_dispatch/middleware/executor.rb:12:in `call'
+actionpack (5.0.0.1) lib/action_dispatch/middleware/static.rb:136:in `call'
+rack (2.0.1) lib/rack/sendfile.rb:111:in `call'
+railties (5.0.0.1) lib/rails/engine.rb:522:in `call'
+puma (3.6.0) lib/puma/configuration.rb:225:in `call'
+puma (3.6.0) lib/puma/server.rb:578:in `handle_request'
+puma (3.6.0) lib/puma/server.rb:415:in `process_client'
+puma (3.6.0) lib/puma/server.rb:275:in `block in run'
+puma (3.6.0) lib/puma/thread_pool.rb:116:in `block in spawn_thread'
+  
+ActionController::RoutingError (No route matches [GET] "/assets/underscore-min.map"):
+  
+actionpack (5.0.0.1) lib/action_dispatch/middleware/debug_exceptions.rb:53:in `call'
+web-console (3.3.1) lib/web_console/middleware.rb:131:in `call_app'
+web-console (3.3.1) lib/web_console/middleware.rb:28:in `block in call'
+web-console (3.3.1) lib/web_console/middleware.rb:18:in `catch'
+web-console (3.3.1) lib/web_console/middleware.rb:18:in `call'
+actionpack (5.0.0.1) lib/action_dispatch/middleware/show_exceptions.rb:31:in `call'
+railties (5.0.0.1) lib/rails/rack/logger.rb:36:in `call_app'
+railties (5.0.0.1) lib/rails/rack/logger.rb:24:in `block in call'
+activesupport (5.0.0.1) lib/active_support/tagged_logging.rb:70:in `block in tagged'
+activesupport (5.0.0.1) lib/active_support/tagged_logging.rb:26:in `tagged'
+activesupport (5.0.0.1) lib/active_support/tagged_logging.rb:70:in `tagged'
+railties (5.0.0.1) lib/rails/rack/logger.rb:24:in `call'
+sprockets-rails (3.2.0) lib/sprockets/rails/quiet_assets.rb:11:in `block in call'
+activesupport (5.0.0.1) lib/active_support/logger_silence.rb:20:in `silence'
+activesupport (5.0.0.1) lib/active_support/logger.rb:63:in `block (3 levels) in broadcast'
+activesupport (5.0.0.1) lib/active_support/logger_silence.rb:20:in `silence'
+activesupport (5.0.0.1) lib/active_support/logger.rb:61:in `block (2 levels) in broadcast'
+sprockets-rails (3.2.0) lib/sprockets/rails/quiet_assets.rb:11:in `call'
+actionpack (5.0.0.1) lib/action_dispatch/middleware/request_id.rb:24:in `call'
+rack (2.0.1) lib/rack/method_override.rb:22:in `call'
+rack (2.0.1) lib/rack/runtime.rb:22:in `call'
+activesupport (5.0.0.1) lib/active_support/cache/strategy/local_cache_middleware.rb:28:in `call'
+actionpack (5.0.0.1) lib/action_dispatch/middleware/executor.rb:12:in `call'
+actionpack (5.0.0.1) lib/action_dispatch/middleware/static.rb:136:in `call'
+rack (2.0.1) lib/rack/sendfile.rb:111:in `call'
+railties (5.0.0.1) lib/rails/engine.rb:522:in `call'
+puma (3.6.0) lib/puma/configuration.rb:225:in `call'
+puma (3.6.0) lib/puma/server.rb:578:in `handle_request'
+puma (3.6.0) lib/puma/server.rb:415:in `process_client'
+puma (3.6.0) lib/puma/server.rb:275:in `block in run'
+puma (3.6.0) lib/puma/thread_pool.rb:116:in `block in spawn_thread'
+Started DELETE "/spots/33" for ::1 at 2016-10-06 17:54:17 -0400
+Processing by SpotsController#destroy as HTML
+  Parameters: {"authenticity_token"=>"q4pl+VbNdVZcKUf+Ykzrns0GcmPFEqARR9NRH30Ej4UoI/9aIK/ffKKHzhHAesO6TD8BmquBgOY8yshKlyg1/w==", "id"=>"33"}
+  [1m[36mUser Load (0.7ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 ORDER BY "users"."id" ASC LIMIT $2[0m  [["id", 5], ["LIMIT", 1]]
+  [1m[36mSpot Load (0.4ms)[0m  [1m[34mSELECT  "spots".* FROM "spots" WHERE "spots"."id" = $1 LIMIT $2[0m  [["id", 33], ["LIMIT", 1]]
+  [1m[35m (0.2ms)[0m  [1m[35mBEGIN[0m
+  [1m[35mSQL (0.5ms)[0m  [1m[31mDELETE FROM "spots" WHERE "spots"."id" = $1[0m  [["id", 33]]
+  [1m[35m (0.4ms)[0m  [1m[35mCOMMIT[0m
+Redirected to http://localhost:3000/spots
+Completed 302 Found in 8ms (ActiveRecord: 2.1ms)
+
+
+Started GET "/spots" for ::1 at 2016-10-06 17:54:17 -0400
+Processing by SpotsController#index as HTML
+  [1m[36mUser Load (0.3ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 ORDER BY "users"."id" ASC LIMIT $2[0m  [["id", 5], ["LIMIT", 1]]
+  [1m[36mSpot Load (0.2ms)[0m  [1m[34mSELECT "spots".* FROM "spots" WHERE "spots"."user_id" = $1 ORDER BY "spots"."created_at" DESC[0m  [["user_id", 5]]
+  Rendering spots/index.html.erb within layouts/application
+  Rendered spots/index.html.erb within layouts/application (1.0ms)
+  Rendered layouts/_navigation_links.html.erb (0.8ms)
+  Rendered layouts/_navigation.html.erb (2.1ms)
+Completed 200 OK in 137ms (Views: 132.4ms | ActiveRecord: 0.6ms)
+
+
+  
+ActionController::RoutingError (No route matches [GET] "/assets/underscore-min.map"):
+  
+actionpack (5.0.0.1) lib/action_dispatch/middleware/debug_exceptions.rb:53:in `call'
+web-console (3.3.1) lib/web_console/middleware.rb:131:in `call_app'
+web-console (3.3.1) lib/web_console/middleware.rb:28:in `block in call'
+web-console (3.3.1) lib/web_console/middleware.rb:18:in `catch'
+web-console (3.3.1) lib/web_console/middleware.rb:18:in `call'
+actionpack (5.0.0.1) lib/action_dispatch/middleware/show_exceptions.rb:31:in `call'
+railties (5.0.0.1) lib/rails/rack/logger.rb:36:in `call_app'
+railties (5.0.0.1) lib/rails/rack/logger.rb:24:in `block in call'
+activesupport (5.0.0.1) lib/active_support/tagged_logging.rb:70:in `block in tagged'
+activesupport (5.0.0.1) lib/active_support/tagged_logging.rb:26:in `tagged'
+activesupport (5.0.0.1) lib/active_support/tagged_logging.rb:70:in `tagged'
+railties (5.0.0.1) lib/rails/rack/logger.rb:24:in `call'
+sprockets-rails (3.2.0) lib/sprockets/rails/quiet_assets.rb:11:in `block in call'
+activesupport (5.0.0.1) lib/active_support/logger_silence.rb:20:in `silence'
+activesupport (5.0.0.1) lib/active_support/logger.rb:63:in `block (3 levels) in broadcast'
+activesupport (5.0.0.1) lib/active_support/logger_silence.rb:20:in `silence'
+activesupport (5.0.0.1) lib/active_support/logger.rb:61:in `block (2 levels) in broadcast'
+sprockets-rails (3.2.0) lib/sprockets/rails/quiet_assets.rb:11:in `call'
+actionpack (5.0.0.1) lib/action_dispatch/middleware/request_id.rb:24:in `call'
+rack (2.0.1) lib/rack/method_override.rb:22:in `call'
+rack (2.0.1) lib/rack/runtime.rb:22:in `call'
+activesupport (5.0.0.1) lib/active_support/cache/strategy/local_cache_middleware.rb:28:in `call'
+actionpack (5.0.0.1) lib/action_dispatch/middleware/executor.rb:12:in `call'
+actionpack (5.0.0.1) lib/action_dispatch/middleware/static.rb:136:in `call'
+rack (2.0.1) lib/rack/sendfile.rb:111:in `call'
+railties (5.0.0.1) lib/rails/engine.rb:522:in `call'
+puma (3.6.0) lib/puma/configuration.rb:225:in `call'
+puma (3.6.0) lib/puma/server.rb:578:in `handle_request'
+puma (3.6.0) lib/puma/server.rb:415:in `process_client'
+puma (3.6.0) lib/puma/server.rb:275:in `block in run'
+puma (3.6.0) lib/puma/thread_pool.rb:116:in `block in spawn_thread'
+Started GET "/" for ::1 at 2016-10-06 17:57:11 -0400
+  [1m[36mActiveRecord::SchemaMigration Load (0.4ms)[0m  [1m[34mSELECT "schema_migrations".* FROM "schema_migrations"[0m
+Processing by StaticPagesController#city as HTML
+  [1m[36mSpot Load (0.8ms)[0m  [1m[34mSELECT "spots".* FROM "spots" ORDER BY created_at DESC[0m
+  Rendering static_pages/city.html.erb within layouts/application
+  Rendered static_pages/city.html.erb within layouts/application (8.6ms)
+  [1m[36mUser Load (0.7ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 ORDER BY "users"."id" ASC LIMIT $2[0m  [["id", 5], ["LIMIT", 1]]
+  Rendered layouts/_navigation_links.html.erb (17.2ms)
+  Rendered layouts/_navigation.html.erb (18.4ms)
+Completed 200 OK in 714ms (Views: 638.5ms | ActiveRecord: 7.3ms)
+
+
+Started GET "/spots" for ::1 at 2016-10-06 17:57:12 -0400
+Processing by SpotsController#index as HTML
+  [1m[36mUser Load (0.4ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 ORDER BY "users"."id" ASC LIMIT $2[0m  [["id", 5], ["LIMIT", 1]]
+  [1m[36mSpot Load (0.4ms)[0m  [1m[34mSELECT "spots".* FROM "spots" WHERE "spots"."user_id" = $1 ORDER BY "spots"."created_at" DESC[0m  [["user_id", 5]]
+  Rendering spots/index.html.erb within layouts/application
+  Rendered spots/index.html.erb within layouts/application (0.8ms)
+  Rendered layouts/_navigation_links.html.erb (0.6ms)
+  Rendered layouts/_navigation.html.erb (1.9ms)
+Completed 200 OK in 172ms (Views: 151.9ms | ActiveRecord: 0.7ms)
+
+
+Started GET "/spots" for ::1 at 2016-10-06 17:57:12 -0400
+Processing by SpotsController#index as HTML
+  [1m[36mUser Load (0.9ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 ORDER BY "users"."id" ASC LIMIT $2[0m  [["id", 5], ["LIMIT", 1]]
+  [1m[36mSpot Load (0.5ms)[0m  [1m[34mSELECT "spots".* FROM "spots" WHERE "spots"."user_id" = $1 ORDER BY "spots"."created_at" DESC[0m  [["user_id", 5]]
+  Rendering spots/index.html.erb within layouts/application
+  Rendered spots/index.html.erb within layouts/application (0.8ms)
+  Rendered layouts/_navigation_links.html.erb (0.7ms)
+  Rendered layouts/_navigation.html.erb (2.2ms)
+Completed 200 OK in 147ms (Views: 142.0ms | ActiveRecord: 1.4ms)
+
+
+  
+ActionController::RoutingError (No route matches [GET] "/assets/underscore-min.map"):
+  
+actionpack (5.0.0.1) lib/action_dispatch/middleware/debug_exceptions.rb:53:in `call'
+web-console (3.3.1) lib/web_console/middleware.rb:131:in `call_app'
+web-console (3.3.1) lib/web_console/middleware.rb:28:in `block in call'
+web-console (3.3.1) lib/web_console/middleware.rb:18:in `catch'
+web-console (3.3.1) lib/web_console/middleware.rb:18:in `call'
+actionpack (5.0.0.1) lib/action_dispatch/middleware/show_exceptions.rb:31:in `call'
+railties (5.0.0.1) lib/rails/rack/logger.rb:36:in `call_app'
+railties (5.0.0.1) lib/rails/rack/logger.rb:24:in `block in call'
+activesupport (5.0.0.1) lib/active_support/tagged_logging.rb:70:in `block in tagged'
+activesupport (5.0.0.1) lib/active_support/tagged_logging.rb:26:in `tagged'
+activesupport (5.0.0.1) lib/active_support/tagged_logging.rb:70:in `tagged'
+railties (5.0.0.1) lib/rails/rack/logger.rb:24:in `call'
+sprockets-rails (3.2.0) lib/sprockets/rails/quiet_assets.rb:11:in `block in call'
+activesupport (5.0.0.1) lib/active_support/logger_silence.rb:20:in `silence'
+activesupport (5.0.0.1) lib/active_support/logger.rb:63:in `block (3 levels) in broadcast'
+activesupport (5.0.0.1) lib/active_support/logger_silence.rb:20:in `silence'
+activesupport (5.0.0.1) lib/active_support/logger.rb:61:in `block (2 levels) in broadcast'
+sprockets-rails (3.2.0) lib/sprockets/rails/quiet_assets.rb:11:in `call'
+actionpack (5.0.0.1) lib/action_dispatch/middleware/request_id.rb:24:in `call'
+rack (2.0.1) lib/rack/method_override.rb:22:in `call'
+rack (2.0.1) lib/rack/runtime.rb:22:in `call'
+activesupport (5.0.0.1) lib/active_support/cache/strategy/local_cache_middleware.rb:28:in `call'
+actionpack (5.0.0.1) lib/action_dispatch/middleware/executor.rb:12:in `call'
+actionpack (5.0.0.1) lib/action_dispatch/middleware/static.rb:136:in `call'
+rack (2.0.1) lib/rack/sendfile.rb:111:in `call'
+railties (5.0.0.1) lib/rails/engine.rb:522:in `call'
+puma (3.6.0) lib/puma/configuration.rb:225:in `call'
+puma (3.6.0) lib/puma/server.rb:578:in `handle_request'
+puma (3.6.0) lib/puma/server.rb:415:in `process_client'
+puma (3.6.0) lib/puma/server.rb:275:in `block in run'
+puma (3.6.0) lib/puma/thread_pool.rb:116:in `block in spawn_thread'
+Started GET "/spots" for ::1 at 2016-10-06 17:58:03 -0400
+Processing by SpotsController#index as HTML
+  [1m[36mUser Load (0.4ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 ORDER BY "users"."id" ASC LIMIT $2[0m  [["id", 5], ["LIMIT", 1]]
+  [1m[36mSpot Load (0.2ms)[0m  [1m[34mSELECT "spots".* FROM "spots" WHERE "spots"."user_id" = $1 ORDER BY "spots"."created_at" DESC[0m  [["user_id", 5]]
+  Rendering spots/index.html.erb within layouts/application
+  Rendered spots/index.html.erb within layouts/application (0.9ms)
+  Rendered layouts/_navigation_links.html.erb (0.6ms)
+  Rendered layouts/_navigation.html.erb (1.8ms)
+Completed 200 OK in 129ms (Views: 125.4ms | ActiveRecord: 0.6ms)
+
+
+  
+ActionController::RoutingError (No route matches [GET] "/assets/underscore-min.map"):
+  
+actionpack (5.0.0.1) lib/action_dispatch/middleware/debug_exceptions.rb:53:in `call'
+web-console (3.3.1) lib/web_console/middleware.rb:131:in `call_app'
+web-console (3.3.1) lib/web_console/middleware.rb:28:in `block in call'
+web-console (3.3.1) lib/web_console/middleware.rb:18:in `catch'
+web-console (3.3.1) lib/web_console/middleware.rb:18:in `call'
+actionpack (5.0.0.1) lib/action_dispatch/middleware/show_exceptions.rb:31:in `call'
+railties (5.0.0.1) lib/rails/rack/logger.rb:36:in `call_app'
+railties (5.0.0.1) lib/rails/rack/logger.rb:24:in `block in call'
+activesupport (5.0.0.1) lib/active_support/tagged_logging.rb:70:in `block in tagged'
+activesupport (5.0.0.1) lib/active_support/tagged_logging.rb:26:in `tagged'
+activesupport (5.0.0.1) lib/active_support/tagged_logging.rb:70:in `tagged'
+railties (5.0.0.1) lib/rails/rack/logger.rb:24:in `call'
+sprockets-rails (3.2.0) lib/sprockets/rails/quiet_assets.rb:11:in `block in call'
+activesupport (5.0.0.1) lib/active_support/logger_silence.rb:20:in `silence'
+activesupport (5.0.0.1) lib/active_support/logger.rb:63:in `block (3 levels) in broadcast'
+activesupport (5.0.0.1) lib/active_support/logger_silence.rb:20:in `silence'
+activesupport (5.0.0.1) lib/active_support/logger.rb:61:in `block (2 levels) in broadcast'
+sprockets-rails (3.2.0) lib/sprockets/rails/quiet_assets.rb:11:in `call'
+actionpack (5.0.0.1) lib/action_dispatch/middleware/request_id.rb:24:in `call'
+rack (2.0.1) lib/rack/method_override.rb:22:in `call'
+rack (2.0.1) lib/rack/runtime.rb:22:in `call'
+activesupport (5.0.0.1) lib/active_support/cache/strategy/local_cache_middleware.rb:28:in `call'
+actionpack (5.0.0.1) lib/action_dispatch/middleware/executor.rb:12:in `call'
+actionpack (5.0.0.1) lib/action_dispatch/middleware/static.rb:136:in `call'
+rack (2.0.1) lib/rack/sendfile.rb:111:in `call'
+railties (5.0.0.1) lib/rails/engine.rb:522:in `call'
+puma (3.6.0) lib/puma/configuration.rb:225:in `call'
+puma (3.6.0) lib/puma/server.rb:578:in `handle_request'
+puma (3.6.0) lib/puma/server.rb:415:in `process_client'
+puma (3.6.0) lib/puma/server.rb:275:in `block in run'
+puma (3.6.0) lib/puma/thread_pool.rb:116:in `block in spawn_thread'
+Started GET "/spots" for ::1 at 2016-10-06 17:58:24 -0400
+Processing by SpotsController#index as HTML
+  [1m[36mUser Load (0.3ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 ORDER BY "users"."id" ASC LIMIT $2[0m  [["id", 5], ["LIMIT", 1]]
+  [1m[36mSpot Load (0.2ms)[0m  [1m[34mSELECT "spots".* FROM "spots" WHERE "spots"."user_id" = $1 ORDER BY "spots"."created_at" DESC[0m  [["user_id", 5]]
+  Rendering spots/index.html.erb within layouts/application
+  Rendered spots/index.html.erb within layouts/application (0.8ms)
+  Rendered layouts/_navigation_links.html.erb (1.0ms)
+  Rendered layouts/_navigation.html.erb (2.9ms)
+Completed 200 OK in 151ms (Views: 147.1ms | ActiveRecord: 0.6ms)
+
+
+  
+ActionController::RoutingError (No route matches [GET] "/assets/underscore-min.map"):
+  
+actionpack (5.0.0.1) lib/action_dispatch/middleware/debug_exceptions.rb:53:in `call'
+web-console (3.3.1) lib/web_console/middleware.rb:131:in `call_app'
+web-console (3.3.1) lib/web_console/middleware.rb:28:in `block in call'
+web-console (3.3.1) lib/web_console/middleware.rb:18:in `catch'
+web-console (3.3.1) lib/web_console/middleware.rb:18:in `call'
+actionpack (5.0.0.1) lib/action_dispatch/middleware/show_exceptions.rb:31:in `call'
+railties (5.0.0.1) lib/rails/rack/logger.rb:36:in `call_app'
+railties (5.0.0.1) lib/rails/rack/logger.rb:24:in `block in call'
+activesupport (5.0.0.1) lib/active_support/tagged_logging.rb:70:in `block in tagged'
+activesupport (5.0.0.1) lib/active_support/tagged_logging.rb:26:in `tagged'
+activesupport (5.0.0.1) lib/active_support/tagged_logging.rb:70:in `tagged'
+railties (5.0.0.1) lib/rails/rack/logger.rb:24:in `call'
+sprockets-rails (3.2.0) lib/sprockets/rails/quiet_assets.rb:11:in `block in call'
+activesupport (5.0.0.1) lib/active_support/logger_silence.rb:20:in `silence'
+activesupport (5.0.0.1) lib/active_support/logger.rb:63:in `block (3 levels) in broadcast'
+activesupport (5.0.0.1) lib/active_support/logger_silence.rb:20:in `silence'
+activesupport (5.0.0.1) lib/active_support/logger.rb:61:in `block (2 levels) in broadcast'
+sprockets-rails (3.2.0) lib/sprockets/rails/quiet_assets.rb:11:in `call'
+actionpack (5.0.0.1) lib/action_dispatch/middleware/request_id.rb:24:in `call'
+rack (2.0.1) lib/rack/method_override.rb:22:in `call'
+rack (2.0.1) lib/rack/runtime.rb:22:in `call'
+activesupport (5.0.0.1) lib/active_support/cache/strategy/local_cache_middleware.rb:28:in `call'
+actionpack (5.0.0.1) lib/action_dispatch/middleware/executor.rb:12:in `call'
+actionpack (5.0.0.1) lib/action_dispatch/middleware/static.rb:136:in `call'
+rack (2.0.1) lib/rack/sendfile.rb:111:in `call'
+railties (5.0.0.1) lib/rails/engine.rb:522:in `call'
+puma (3.6.0) lib/puma/configuration.rb:225:in `call'
+puma (3.6.0) lib/puma/server.rb:578:in `handle_request'
+puma (3.6.0) lib/puma/server.rb:415:in `process_client'
+puma (3.6.0) lib/puma/server.rb:275:in `block in run'
+puma (3.6.0) lib/puma/thread_pool.rb:116:in `block in spawn_thread'
+Started GET "/spots" for ::1 at 2016-10-06 17:59:12 -0400
+Processing by SpotsController#index as HTML
+  [1m[36mUser Load (0.4ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 ORDER BY "users"."id" ASC LIMIT $2[0m  [["id", 5], ["LIMIT", 1]]
+  [1m[36mSpot Load (0.2ms)[0m  [1m[34mSELECT "spots".* FROM "spots" WHERE "spots"."user_id" = $1 ORDER BY "spots"."created_at" DESC[0m  [["user_id", 5]]
+  Rendering spots/index.html.erb within layouts/application
+  Rendered spots/index.html.erb within layouts/application (0.8ms)
+  Rendered layouts/_navigation_links.html.erb (0.6ms)
+  Rendered layouts/_navigation.html.erb (1.9ms)
+Completed 200 OK in 133ms (Views: 128.8ms | ActiveRecord: 0.6ms)
+
+
+  
+ActionController::RoutingError (No route matches [GET] "/assets/underscore-min.map"):
+  
+actionpack (5.0.0.1) lib/action_dispatch/middleware/debug_exceptions.rb:53:in `call'
+web-console (3.3.1) lib/web_console/middleware.rb:131:in `call_app'
+web-console (3.3.1) lib/web_console/middleware.rb:28:in `block in call'
+web-console (3.3.1) lib/web_console/middleware.rb:18:in `catch'
+web-console (3.3.1) lib/web_console/middleware.rb:18:in `call'
+actionpack (5.0.0.1) lib/action_dispatch/middleware/show_exceptions.rb:31:in `call'
+railties (5.0.0.1) lib/rails/rack/logger.rb:36:in `call_app'
+railties (5.0.0.1) lib/rails/rack/logger.rb:24:in `block in call'
+activesupport (5.0.0.1) lib/active_support/tagged_logging.rb:70:in `block in tagged'
+activesupport (5.0.0.1) lib/active_support/tagged_logging.rb:26:in `tagged'
+activesupport (5.0.0.1) lib/active_support/tagged_logging.rb:70:in `tagged'
+railties (5.0.0.1) lib/rails/rack/logger.rb:24:in `call'
+sprockets-rails (3.2.0) lib/sprockets/rails/quiet_assets.rb:11:in `block in call'
+activesupport (5.0.0.1) lib/active_support/logger_silence.rb:20:in `silence'
+activesupport (5.0.0.1) lib/active_support/logger.rb:63:in `block (3 levels) in broadcast'
+activesupport (5.0.0.1) lib/active_support/logger_silence.rb:20:in `silence'
+activesupport (5.0.0.1) lib/active_support/logger.rb:61:in `block (2 levels) in broadcast'
+sprockets-rails (3.2.0) lib/sprockets/rails/quiet_assets.rb:11:in `call'
+actionpack (5.0.0.1) lib/action_dispatch/middleware/request_id.rb:24:in `call'
+rack (2.0.1) lib/rack/method_override.rb:22:in `call'
+rack (2.0.1) lib/rack/runtime.rb:22:in `call'
+activesupport (5.0.0.1) lib/active_support/cache/strategy/local_cache_middleware.rb:28:in `call'
+actionpack (5.0.0.1) lib/action_dispatch/middleware/executor.rb:12:in `call'
+actionpack (5.0.0.1) lib/action_dispatch/middleware/static.rb:136:in `call'
+rack (2.0.1) lib/rack/sendfile.rb:111:in `call'
+railties (5.0.0.1) lib/rails/engine.rb:522:in `call'
+puma (3.6.0) lib/puma/configuration.rb:225:in `call'
+puma (3.6.0) lib/puma/server.rb:578:in `handle_request'
+puma (3.6.0) lib/puma/server.rb:415:in `process_client'
+puma (3.6.0) lib/puma/server.rb:275:in `block in run'
+puma (3.6.0) lib/puma/thread_pool.rb:116:in `block in spawn_thread'
+Started GET "/spots" for ::1 at 2016-10-06 17:59:56 -0400
+Processing by SpotsController#index as HTML
+  [1m[36mUser Load (0.3ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 ORDER BY "users"."id" ASC LIMIT $2[0m  [["id", 5], ["LIMIT", 1]]
+  [1m[36mSpot Load (0.2ms)[0m  [1m[34mSELECT "spots".* FROM "spots" WHERE "spots"."user_id" = $1 ORDER BY "spots"."created_at" DESC[0m  [["user_id", 5]]
+  Rendering spots/index.html.erb within layouts/application
+  Rendered spots/index.html.erb within layouts/application (0.8ms)
+  Rendered layouts/_navigation_links.html.erb (0.6ms)
+  Rendered layouts/_navigation.html.erb (1.9ms)
+Completed 200 OK in 156ms (Views: 152.1ms | ActiveRecord: 0.5ms)
+
+
+  
+ActionController::RoutingError (No route matches [GET] "/assets/underscore-min.map"):
+  
+actionpack (5.0.0.1) lib/action_dispatch/middleware/debug_exceptions.rb:53:in `call'
+web-console (3.3.1) lib/web_console/middleware.rb:131:in `call_app'
+web-console (3.3.1) lib/web_console/middleware.rb:28:in `block in call'
+web-console (3.3.1) lib/web_console/middleware.rb:18:in `catch'
+web-console (3.3.1) lib/web_console/middleware.rb:18:in `call'
+actionpack (5.0.0.1) lib/action_dispatch/middleware/show_exceptions.rb:31:in `call'
+railties (5.0.0.1) lib/rails/rack/logger.rb:36:in `call_app'
+railties (5.0.0.1) lib/rails/rack/logger.rb:24:in `block in call'
+activesupport (5.0.0.1) lib/active_support/tagged_logging.rb:70:in `block in tagged'
+activesupport (5.0.0.1) lib/active_support/tagged_logging.rb:26:in `tagged'
+activesupport (5.0.0.1) lib/active_support/tagged_logging.rb:70:in `tagged'
+railties (5.0.0.1) lib/rails/rack/logger.rb:24:in `call'
+sprockets-rails (3.2.0) lib/sprockets/rails/quiet_assets.rb:11:in `block in call'
+activesupport (5.0.0.1) lib/active_support/logger_silence.rb:20:in `silence'
+activesupport (5.0.0.1) lib/active_support/logger.rb:63:in `block (3 levels) in broadcast'
+activesupport (5.0.0.1) lib/active_support/logger_silence.rb:20:in `silence'
+activesupport (5.0.0.1) lib/active_support/logger.rb:61:in `block (2 levels) in broadcast'
+sprockets-rails (3.2.0) lib/sprockets/rails/quiet_assets.rb:11:in `call'
+actionpack (5.0.0.1) lib/action_dispatch/middleware/request_id.rb:24:in `call'
+rack (2.0.1) lib/rack/method_override.rb:22:in `call'
+rack (2.0.1) lib/rack/runtime.rb:22:in `call'
+activesupport (5.0.0.1) lib/active_support/cache/strategy/local_cache_middleware.rb:28:in `call'
+actionpack (5.0.0.1) lib/action_dispatch/middleware/executor.rb:12:in `call'
+actionpack (5.0.0.1) lib/action_dispatch/middleware/static.rb:136:in `call'
+rack (2.0.1) lib/rack/sendfile.rb:111:in `call'
+railties (5.0.0.1) lib/rails/engine.rb:522:in `call'
+puma (3.6.0) lib/puma/configuration.rb:225:in `call'
+puma (3.6.0) lib/puma/server.rb:578:in `handle_request'
+puma (3.6.0) lib/puma/server.rb:415:in `process_client'
+puma (3.6.0) lib/puma/server.rb:275:in `block in run'
+puma (3.6.0) lib/puma/thread_pool.rb:116:in `block in spawn_thread'
