@@ -32,6 +32,22 @@
               markers = handler.addMarkers(<%=raw @hash.to_json %>);
               handler.bounds.extendWith(markers);
               handler.fitMapToBounds();
+                    if (markers.length == 0) {
+                      markers = handler.addMarkers([
+                        {
+                        "lat": 33.775253,
+                        "lng": -84.367066,
+                        "picture": {
+                          "url": "http://i.imgur.com/W6yqCIc.png",
+                          "width":  254,
+                          "height": 96
+                        },
+                        "infowindow": "Welcome to FreeSpot! As you know..."
+                      }
+                    ]);
+                    handler.bounds.extendWith(markers);
+                    handler.fitMapToBounds();
+              }
             });
           </script>
         </div>
