@@ -39,17 +39,12 @@
                <!-- Full JSON Output format of selected address -->
                <!-- <div id="output"></div> -->
 
-  <div class="form-group">
-    <%= f.label :time_limit, class: "col-sm-2 control-label" %>
-    <div class="col-sm-10">
-      <%= f.text_field :time_limit, class: "form-control" %>
-    </div>
-  </div>
 
-    <div class="form-group">
-    <%= f.label :description, class: "col-sm-2 control-label" %>
-    <div class="col-sm-10">
-      <%= f.text_field :description, class: "form-control" %>
+  <div class="form-group">
+  <%= f.label :time_limit, class: "col-sm-2 control-label" %>
+    <div class="col-sm-10" id="locationField">
+      <%= f.select :time_limit, options_for_select([['Unlimited','Unlimited'],['30 Minutes','30 Minutes'],['1 Hour','1 Hour'],['2 Hours','2 Hours'],['3 Hours','3 Hours'], ['4 Hours','4 Hours'], ['Other','Other']]), {}, {class:'form-control'} %>
+      <%= f.text_field :time_limit, "data-depends-on" => "#spot_time_limit", "data-depends-on-value" => "Other" %>
     </div>
   </div>
 
@@ -61,11 +56,57 @@
 
 <% end %>
 
+<script type="text/javascript">
+  $(function() {
 
-<script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyBsVKH8m8lqhOELJ347MN_m-M6-GRLlWhQ&libraries=places&callback=initAutocomplete"></script>
+    console.log('inline script from _form.html.erb');
 
-<!-- <script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyD0HzR2CmN_gfrADA_iuub-EcVrTfBZIe4&callback=initialize">
+    $.fn.dependsOn = function(element, value) {
+      var elements = this;
+      var hideOrShow = function() {
+        var $this = $(this);
+        var showEm;
+        if ( $this.is('input[type="checkbox"]') ) {
+          showEm = $this.is(':checked');
+        } else if ($this.is('select')) {
+          var fieldValue = $this.find('option:selected').val();
+          console.log('hideOrShow: fieldValue:', fieldValue);
+          if (typeof(value) == 'undefined') {
+            console.log('A');
+            showEm = fieldValue && $.trim(fieldValue) != '';
+          } else if ($.isArray(value)) {
+            console.log('B');
+            showEm = $.inArray(fieldValue, value.map(function(v) {return v.toString()})) >= 0;
+          } else {
+            console.log('C');
+            showEm = value.toString() == fieldValue;
+          }
+        } else {
+          console.log('hmm, nothing to do?');
+        }
+        console.log('hideOrShow: returning', showEm);
+        elements.toggle(showEm);
+      }
+      //add change handler to element
+      $(element).change(hideOrShow);
+
+      //hide the dependent fields
+      $(element).each(hideOrShow);
+
+      return elements;
+    };
+
+    $('*[data-depends-on]').each(function() {
+      var $this = $(this);
+      var master = $this.data('dependsOn').toString();
+      var value = $this.data('dependsOnValue');
+      if (typeof(value) != 'undefined') {
+        $this.dependsOn(master, value);
+      } else {
+        $this.dependsOn(master);
+      }
+    });
+  });
 </script>
-<script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyBsVKH8m8lqhOELJ347MN_m-M6-GRLlWhQ&libraries=places&callback=initialize">
-</script> -->
+
 <%= javascript_include_tag('autocompleteform.js', defer: "defer") %>
