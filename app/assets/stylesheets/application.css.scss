@@ -34,8 +34,9 @@ $gh-grey: #CEE5F2;
 
 // GENERAL STYLING
 
-h1 {
+h1, h2 {
   font-family: 'Raleway', sans-serif;
+  font-weight: bold;
 }
 
 .page-header {
@@ -51,6 +52,14 @@ h1 {
 
 a {
   color: black;
+}
+
+.signup {
+
+}
+
+body {
+  font-family: 'Raleway', sans-serif;
 }
 
 // NAV BAR STYLING
@@ -86,10 +95,6 @@ a {
 
 .spots-content i {
   color: red;
-}
-
-.signup .signin {
-  max-width: 80em;
 }
 
 .edit-spot, .spot-page {
