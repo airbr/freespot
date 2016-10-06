@@ -21,8 +21,22 @@
 @import "foundation_and_overrides";
 @import "font-awesome-sprockets";
 @import "font-awesome";
+@import 'https://fonts.googleapis.com/css?family=Raleway:400,800';
 
-$body-background: #CEE5F2;
+$gh-blue: #57B8FF;
+$gh-darkblue: #12355B;
+$gh-yellow: #FFE74C;
+$gh-red: #E15554;
+$gh-grey: #CEE5F2;
+
+h1 {
+  font-family: 'Raleway', sans-serif;
+}
+
+.page-header {
+  padding: 1em;
+  margin-left: 1em;
+}
 
 .no-js {
   @include breakpoint(small only) {
@@ -48,17 +62,28 @@ a {
   color: black;
 }
 
+// NAV BAR STYLING
+
 #example-menu {
-  background-color: #57B8FF;
+  background-color: $gh-yellow;
 }
 
-.signup {
-  max-width: 800px;
-  margin: 0 auto;
+#example-menu ul {
+  background-color: $gh-yellow;
+}
+
+#example-menu a:hover {
+  font-weight: bold;
+  color: white;
+}
+
+
+.signup .signin {
+  max-width: 80em;
 }
 
 .edit-spot, .spot-page {
   .button {
-    margin-top: 10px;
+    margin-top: 1em;
   }
 }

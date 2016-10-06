@@ -1,19 +1,16 @@
 <%# navigation styled for Foundation 6 %>
+
 <div class="title-bar" data-responsive-toggle="example-menu" data-hide-for="medium">
   <button class="menu-icon" type="button" data-toggle></button>
-  <div class="title-bar-title">FreeSpot</div>
+  <div class="title-bar-title">Free Spot <i class="fa fa-map-pin" aria-hidden="true"></i></div>
 </div>
-
 
 <div class="top-bar" id="example-menu">
   <div class="top-bar-right">
     <ul class="dropdown menu" data-dropdown-menu>
-      <%= render 'layouts/navigation_links' %>
+      <li class="menu-text">Free Spot <i class="fa fa-map-pin" aria-hidden="true"></i></li>
+      <li>
+        <%= render 'layouts/navigation_links' %>
     </ul>
   </div>
-  <!-- <div class="top-bar-right">
-  <ul class="menu">
-    <li><input type="search" placeholder="Search"></li>
-    <li><button type="button" class="button">Search</button></li>
-  </ul> -->
 </div>

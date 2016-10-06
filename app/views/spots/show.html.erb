@@ -3,7 +3,7 @@
   <script src="//cdn.rawgit.com/mahnunchik/markerclustererplus/master/dist/markerclusterer.min.js"></script>
   <script src='//cdn.rawgit.com/printercu/google-maps-utility-library-v3-read-only/master/infobox/src/infobox_packed.js' type='text/javascript'></script> <!-- only if you need custom infoboxes -->
 
-  <div class="page-header">
+  <div class="page-header text-center">
     <h1><%= @spot.title %></h1>
     <%= link_to spots_path, class: 'button' do %>
       <i class="fa fa-arrow-left" aria-hidden="true"></i>
@@ -15,7 +15,8 @@
     <% end %>
   </div>
 
-  <dl class="dl-horizontal">
+  <div class="row">
+  <dl class="dl-horizontal medium-6 columns">
     <dt>Address:</dt>
     <dd><%= @spot.address %></dd>
 
@@ -24,31 +25,33 @@
 
     <dt>Created:</dt>
     <dd><%= @spot.created_at %></dd>
-
   </dl>
 
-  <div class="columns flex-video">
-    <div id="map" style='max-width: 500px; height: 300px;'></div>
-
-    <script type="text/javascript">
-      handler = Gmaps.build('Google');
-      handler.buildMap({ provider: {}, internal: {id: 'map'}}, function(){
-        markers = handler.addMarkers(<%=raw @hash.to_json %>);
-        handler.bounds.extendWith(markers);
-        handler.fitMapToBounds();
-      });
-    </script>
+  <div class="spot-comments medium-4 columns">
+    <h4>Comments</h4>
+      <div id="comments">
+        <%= render :partial => @spot.comments %>
+      </div>
+        <%= form_for [@spot, Comment.new] do |f| %>
+          <div class="col-sm-10">
+          <%= f.text_field :body, class: "form-control" %>
+        </div>
+          <p><%= f.submit "Add Comment", class: "button" %></p>
+        <% end %>
   </div>
 </div>
 
-  <h4>Comments</h4>
-    <div id="comments">
-      <%= render :partial => @spot.comments %>
-    </div>
-      <%= form_for [@spot, Comment.new] do |f| %>
-        <div class="col-sm-10">
-        <%= f.text_field :body, class: "form-control" %>
+      <div class="flex-video">
+        <div id="map" style='max-width: 500px; height: 300px;'></div>
+
+        <script type="text/javascript">
+          handler = Gmaps.build('Google');
+          handler.buildMap({ provider: {}, internal: {id: 'map'}}, function(){
+            markers = handler.addMarkers(<%=raw @hash.to_json %>);
+            handler.bounds.extendWith(markers);
+            handler.fitMapToBounds();
+          });
+        </script>
       </div>
-        <p><%= f.submit "Add Comment", class: "button" %></p>
-      <% end %>
+    </div>
 </div>
