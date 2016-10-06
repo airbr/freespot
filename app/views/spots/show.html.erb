@@ -1,45 +1,43 @@
 <div class="spot-page">
+  <div class="row align-left medium-unstack">
+    <div class="small-11 medium-6 large-4 columns">
+      <h1><%= @spot.title %></h1>
+      <%= link_to spots_path, class: 'button' do %>
+        <i class="fa fa-arrow-left" aria-hidden="true"></i>
+        Back
+      <% end %>
+      <%= link_to edit_spot_path(@spot), class: 'button' do %>
+        <i class="fa fa-pencil" aria-hidden="true"></i>
+        Edit
+      <% end %>
 
-  <div class="page-header text-center">
-    <h1><%= @spot.title %></h1>
-    <%= link_to spots_path, class: 'button' do %>
-      <i class="fa fa-arrow-left" aria-hidden="true"></i>
-      Back
-    <% end %>
-    <%= link_to edit_spot_path(@spot), class: 'button' do %>
-      <i class="fa fa-pencil" aria-hidden="true"></i>
-      Edit
-    <% end %>
-  </div>
+      <dl class="dl-horizontal">
+        <dt>Address:</dt>
+        <dd><%= @spot.address %></dd>
 
-  <div class="row">
-  <dl class="dl-horizontal medium-6 columns">
-    <dt>Address:</dt>
-    <dd><%= @spot.address %></dd>
+        <dt>Time limit:</dt>
+        <dd><%= @spot.time_limit %></dd>
 
-    <dt>Time limit:</dt>
-    <dd><%= @spot.time_limit %></dd>
+        <dt>Created:</dt>
+        <dd><%= @spot.created_at %></dd>
+      </dl>
 
-    <dt>Created:</dt>
-    <dd><%= @spot.created_at %></dd>
-  </dl>
-
-  <div class="spot-comments medium-4 columns">
-    <h4>Comments</h4>
-      <div id="comments">
-        <%= render :partial => @spot.comments %>
+      <div class="spot-comments align-left">
+        <h4>Comments</h4>
+          <div id="comments">
+            <%= render :partial => @spot.comments %>
+          </div>
+            <%= form_for [@spot, Comment.new] do |f| %>
+              <div class="col-sm-10">
+              <%= f.text_field :body, class: "form-control" %>
+            </div>
+              <p><%= f.submit "Add Comment", class: "button" %></p>
+            <% end %>
       </div>
-        <%= form_for [@spot, Comment.new] do |f| %>
-          <div class="col-sm-10">
-          <%= f.text_field :body, class: "form-control" %>
-        </div>
-          <p><%= f.submit "Add Comment", class: "button" %></p>
-        <% end %>
-  </div>
-</div>
+    </div>
 
-      <div class="flex-video">
-        <div id="map" style='max-width: 500px; height: 300px;'></div>
+      <div class="flex-video columns">
+        <div id="map" style='max-width: 900px; height: 700px;'></div>
 
         <script type="text/javascript">
           handler = Gmaps.build('Google');

@@ -7,7 +7,7 @@
     </div>
     <%= form_tag(city_path, :method => "get", id: "search-form") do %>
       <%= text_field_tag :search, params[:search], placeholder: "Search Spots" %>
-      <%= submit_tag "Search" %>
+      <%= submit_tag "Search", class:'button' %>
       <%= link_to "Clear", city_path %>
     <% end %>
 
@@ -39,7 +39,7 @@
   </div>
 
   <div class="columns flex-video">
-      <div id="map" style='max-width: 900px; height: 700px;'></div>
+      <div id="map" style='max-width: 900px; height: 740px;'></div>
 
     <script type="text/javascript" defer>
       $(function() {

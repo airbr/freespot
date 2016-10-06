@@ -1,16 +1,17 @@
-<div class="edit-spot medium-6 columns">
-  <div class="page-header">
-    <%= link_to spots_path, class: 'button' do %>
-      <i class="fa fa-arrow-left" aria-hidden="true"></i>
-      Back
-    <% end %>
-    <%= link_to @spot, class: 'button' do %>
-      <span class="glyphicon glyphicon-info-sign"></span>
-      Show
-    <% end %>
-    <h1>Edit Your Spot</h1>
+<div class="edit-spot">
+  <div class="row align-left medium-unstack">
+    <div class="small-12 medium-6 large-4 columns">
+      <%= link_to spots_path, class: 'button' do %>
+        <i class="fa fa-arrow-left" aria-hidden="true"></i>
+        Back
+      <% end %>
+      <%= link_to @spot, class: 'button' do %>
+        <span class="glyphicon glyphicon-info-sign"></span>
+        Show
+      <% end %>
+      <h1>Edit Your Spot</h1>
+
+      <%= render 'form' %>
+    </div>  
   </div>
-
-  <%= render 'form' %>
-
 </div>
