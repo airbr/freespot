@@ -49,11 +49,13 @@
 
     <script type="text/javascript">
       handler = Gmaps.build('Google');
-      handler.buildMap({ provider: {}, internal: {id: 'map'}}, function(){
+      handler.buildMap({ provider: { minZoom: 12 }, internal: {id: 'map'}}, function(){
         markers = handler.addMarkers(<%=raw @hash.to_json %>);
         handler.bounds.extendWith(markers);
-        handler.fitMapToBounds();
+        // handler.fitMapToBounds();
+        handler.map.centerOn({ lat: 33.7722, lng: -84.3661 });
       });
+
     </script>
     </div>
 
