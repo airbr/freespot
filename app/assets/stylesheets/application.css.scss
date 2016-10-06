@@ -30,12 +30,14 @@ $gh-darkblue: #12355B;
 $gh-yellow: #FFE74C;
 $gh-red: #E15554;
 $gh-grey: #CEE5F2;
+$gh-font: 'Raleway', sans-serif;
 
 
 // GENERAL STYLING
 
-h1 {
-  font-family: 'Raleway', sans-serif;
+h1, h2 {
+  font-family: $gh-font;
+  font-weight: bold;
 }
 
 .page-header {
@@ -49,8 +51,12 @@ h1 {
   }
 }
 
-a {
-  color: black;
+.signup {
+
+}
+
+body {
+  font-family: $gh-font;
 }
 
 // NAV BAR STYLING
@@ -63,16 +69,25 @@ a {
   background-color: $gh-yellow;
 }
 
+#example-menu a {
+  color: black;
+}
+
 #example-menu a:hover {
   font-weight: bold;
   color: white;
 }
 
 
-// MY SPOTS PAGE
+// SPOTS
 
 .spots-content {
   height: 32.5em;
+  overflow: auto;
+}
+
+.myspots-content {
+  height: 35.5em;
   overflow: auto;
 }
 
@@ -84,18 +99,19 @@ a {
   background-color: rgba(0, 0, 0, 0);
 }
 
-.spots-content i {
+.myspots-content i {
   color: red;
-}
-
-.signup .signin {
-  max-width: 80em;
 }
 
 .edit-spot, .spot-page {
   .button {
     margin-top: 1em;
   }
+}
+
+#comments {
+  height: 12em;
+  overflow: auto;
 }
 
 // ERROR MESSAGE CALLOUTS
@@ -127,7 +143,9 @@ a {
 }
 
 h4 {
-  text-align: center;
+  font-family: $gh-font;
+  font-weight: bold;
+  text-align: left;
 }
 #developersSection {
   display: flex;

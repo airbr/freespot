@@ -1,11 +1,4 @@
 
-  <% provide(:title, 'City') %>
-  <div class="text-center">
-    <h1>City-Wide Spots</h1>
-    <h3>View spots around the city.</h3>
-    <br/>
-  </div>
-
 <div class="row align-left medium-unstack">
   <div class ="small-12 medium-6 large-4 column">
     <% provide(:title, 'City') %>
@@ -14,7 +7,7 @@
     </div>
     <%= form_tag(city_path, :method => "get", id: "search-form") do %>
       <%= text_field_tag :search, params[:search], placeholder: "Search Spots" %>
-      <%= submit_tag "Search" %>
+      <%= submit_tag "Search", class:'button' %>
       <%= link_to "Clear", city_path %>
     <% end %>
 
@@ -46,7 +39,7 @@
   </div>
 
   <div class="columns flex-video">
-      <div id="map" style='max-width: 900px; height: 700px;'></div>
+      <div id="map" style='max-width: 900px; height: 740px;'></div>
 
     <script type="text/javascript" defer>
       $(function() {
