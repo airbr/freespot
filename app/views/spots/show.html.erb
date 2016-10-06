@@ -6,10 +6,12 @@
         <i class="fa fa-arrow-left" aria-hidden="true"></i>
         Back
       <% end %>
+  <% if current_user.id == @spot.user.id %>
       <%= link_to edit_spot_path(@spot), class: 'button' do %>
         <i class="fa fa-pencil" aria-hidden="true"></i>
         Edit
       <% end %>
+    <% end %>
 
       <dl class="dl-horizontal">
         <dt>Address:</dt>
