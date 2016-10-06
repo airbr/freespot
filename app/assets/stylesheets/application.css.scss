@@ -29,6 +29,8 @@ $gh-yellow: #FFE74C;
 $gh-red: #E15554;
 $gh-grey: #CEE5F2;
 
+// GENERAL STYLING
+
 h1 {
   font-family: 'Raleway', sans-serif;
 }
@@ -36,20 +38,6 @@ h1 {
 .page-header {
   padding: 1em;
   margin-left: 1em;
-}
-
-.no-js {
-  @include breakpoint(small only) {
-    .top-bar {
-      display: none;
-    }
-  }
-
-  @include breakpoint(medium) {
-    .title-bar {
-      display: none;
-    }
-  }
 }
 
 .spots {
@@ -78,6 +66,13 @@ a {
 }
 
 
+// MY SPOTS PAGE
+
+.spots-content {
+  height: 50em;
+  overflow: auto;
+}
+
 .signup .signin {
   max-width: 80em;
 }
@@ -85,5 +80,20 @@ a {
 .edit-spot, .spot-page {
   .button {
     margin-top: 1em;
+  }
+}
+
+// USED TO FIX MOBILE NAV BAR VISIBILITY UPON INITIAL LOADING
+.no-js {
+  @include breakpoint(small only) {
+    .top-bar {
+      display: none;
+    }
+  }
+
+  @include breakpoint(medium) {
+    .title-bar {
+      display: none;
+    }
   }
 }
