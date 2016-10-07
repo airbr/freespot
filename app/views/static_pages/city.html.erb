@@ -27,6 +27,7 @@
       <table class="hover">
         <thead>
           <tr>
+                <th></th>
                 <th>Title</th>
                 <th>Address</th>
                 <th>Time limit</th>
@@ -35,6 +36,7 @@
 
         <tbody>
           <%= content_tag_for(:tr, @spots) do |spot| %>
+                <td><i class="fa fa-map-pin" aria-hidden="true"></i></td>
                 <td><%= link_to spot.title, spot %></td>
                 <td><%= spot.address %></td>
                 <td><%= spot.time_limit %></td>
@@ -49,12 +51,18 @@
 
     <script type="text/javascript" defer>
       $(function() {
+        console.log("hi");
         handler = Gmaps.build('Google');
         handler.buildMap({ provider: { }, internal: {id: 'map'}}, function(){
           markers = handler.addMarkers(<%=raw @hash.to_json %>);
           handler.bounds.extendWith(markers);
           handler.fitMapToBounds();
-          // handler.map.centerOn({ lat: 33.7722, lng: -84.3661 });
+        });
+
+        $(".spots-content").on("click", "tr", function() {
+        console.log($(this));
+        var laLatLng = new google.maps.LatLng(33.7722, -84.3661);
+        handler.map.serviceObject.panTo(laLatLng);
         });
       });
     </script>
