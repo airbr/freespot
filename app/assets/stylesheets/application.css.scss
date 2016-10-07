@@ -144,15 +144,17 @@ body {
 
 // ABOUT PAGE
 
-.aboutHeader{
+.about {
   text-align: center;
-  margin-top: 1em;
 }
+// .aboutHeader{
+//   text-align: center;
+//   margin-top: 1em;
+// }
 
 h4 {
   font-family: $gh-font;
   font-weight: bold;
-  text-align: left;
 }
 #developersSection {
   display: flex;
@@ -162,10 +164,7 @@ h4 {
 }
 
 #technologiesSection {
-  display: flex;
-  flex-direction: row;
-  justify-content: center;
-  text-align: center;
+  list-style: none;
 }
 
 .developers {
@@ -178,6 +177,7 @@ h4 {
 
 #bigPin {
   color: $gh-yellow;
+  padding: .5em;
 }
 
 // CITY PAGE
@@ -196,4 +196,3 @@ h4 {
 #messageBar a:hover {
   color: white;
 }
-
