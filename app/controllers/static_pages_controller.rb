@@ -16,7 +16,12 @@ class StaticPagesController < ApplicationController
     @hash = Gmaps4rails.build_markers(@spots) do |spot, marker|
       marker.lat spot.latitude
       marker.lng spot.longitude
-      marker.infowindow spot.address
+      marker.infowindow "<p>#{spot.title}</p> <p>#{spot.address}</p> <p>#{spot.description}</p>"
+      marker.picture({
+                          "url": "http://i.imgur.com/HmtmMSt.png",
+                          "width":  50,
+                          "height": 50
+                    })
     end
   end
 end
