@@ -49,6 +49,7 @@
                     ]);
                     handler.bounds.extendWith(markers);
                     handler.fitMapToBounds();
+                    handler.map.serviceObject.setZoom(12);
               }
               $(".myspots-content").on("click", "tr", function() {
                 var latitude = $(this).children(".lat").attr("class").split(' ')[0];
@@ -56,6 +57,7 @@
                 console.log($(this).children(".lat").attr("class").split(' ')[0]);
                 var laLatLng = new google.maps.LatLng(latitude, longitude);
                 handler.map.serviceObject.panTo(laLatLng);
+                handler.map.serviceObject.setZoom(18);
                 });
 
             });
