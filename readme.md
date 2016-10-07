@@ -26,7 +26,7 @@
 
 FreeSpot is a Ruby on Rails App in development aimed at the issue of finding and sharing knowledge about parking with strong consumption of the Google Maps API. Free Spot incorporates responsive design and custom form features about the variety of different potential parking situations aimed at our intended user.
 
-Technically, the App incorporates full CRUD features for parking 'Spot' objects and allows all users to see spots place onto a globally viewable map, and add comments to spots other users have added to this map. 
+Technically, the App incorporates full CRUD features for parking 'Spot' objects and allows all users to see spots place onto a globally viewable map, and add comments to spots other users have added to this map.
 
 ## Development Team
 
@@ -58,5 +58,6 @@ The publicly [Trello Board](https://trello.com/b/O3ZXyAv8/project4-railsapi) for
 	* Bootstrap Generators
 	* Pry
 	* Sass
+  * Devise for AuthN and AuthZ
 
 * [Foundation CSS Framework](http://foundation.zurb.com/)
