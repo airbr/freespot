@@ -28,17 +28,23 @@
       <table class="hover">
         <thead>
           <tr>
+                <th></th>
                 <th>Title</th>
                 <th>Address</th>
                 <th>Time limit</th>
+                <th></th>
+                <th></th>
           </tr>
         </thead>
 
         <tbody>
           <%= content_tag_for(:tr, @spots) do |spot| %>
+                <td><i class="fa fa-map-pin" aria-hidden="true"></i></td>
                 <td><%= link_to spot.title, spot %></td>
                 <td><%= spot.address %></td>
                 <td><%= spot.time_limit %></td>
+                <td class="<%= spot.latitude %> lat"></td>
+                <td class="<%= spot.longitude %> long"></td>
           <% end %>
         </tbody>
       </table>
@@ -50,12 +56,22 @@
 
     <script type="text/javascript" defer>
       $(function() {
+        console.log("hi");
         handler = Gmaps.build('Google');
         handler.buildMap({ provider: { }, internal: {id: 'map'}}, function(){
           markers = handler.addMarkers(<%=raw @hash.to_json %>);
           handler.bounds.extendWith(markers);
           handler.fitMapToBounds();
-          // handler.map.centerOn({ lat: 33.7722, lng: -84.3661 });
+          handler.map.serviceObject.setZoom(12);
+        });
+
+        $(".spots-content").on("click", "tr", function() {
+        var latitude = $(this).children(".lat").attr("class").split(' ')[0];
+        var longitude = $(this).children(".long").attr("class").split(' ')[0];
+        console.log($(this).children(".lat").attr("class").split(' ')[0]);
+        var laLatLng = new google.maps.LatLng(latitude, longitude);
+        handler.map.serviceObject.panTo(laLatLng);
+        handler.map.serviceObject.setZoom(18);
         });
       });
     </script>

@@ -13,6 +13,8 @@
                       <td><%= spot.address %></td>
                       <td><%= spot.time_limit %></td>
                       <!-- <td><%= spot.description %></td> -->
+                      <td class="<%= spot.latitude %> lat"></td>
+                      <td class="<%= spot.longitude %> long"></td>
                   <td><%= link_to spot, method: :delete, data: { confirm: 'Are you sure?' }, class: 'button delete-button' do %>
                     <i class="fa fa-times-circle fa-2x" aria-hidden="true"></i>
                     <% end %></td>
@@ -48,6 +50,14 @@
                     handler.bounds.extendWith(markers);
                     handler.fitMapToBounds();
               }
+              $(".myspots-content").on("click", "tr", function() {
+                var latitude = $(this).children(".lat").attr("class").split(' ')[0];
+                var longitude = $(this).children(".long").attr("class").split(' ')[0];
+                console.log($(this).children(".lat").attr("class").split(' ')[0]);
+                var laLatLng = new google.maps.LatLng(latitude, longitude);
+                handler.map.serviceObject.panTo(laLatLng);
+                });
+
             });
           </script>
         </div>
