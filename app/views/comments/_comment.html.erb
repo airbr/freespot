@@ -8,7 +8,8 @@
      <% if current_user.id == comment.user.id %>
       <%= button_to 'Delete', [comment.spot, comment],
                 :method => :delete,
-                data: { confirm: 'Are you sure?' }
+                data: { confirm: 'Are you sure?' },
+                class: 'button alert'
                 %>
     <% end %>
   </p>
