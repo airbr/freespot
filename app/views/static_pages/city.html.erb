@@ -1,7 +1,13 @@
+    <% if user_signed_in? == false %>
+      <div id="messageBar">
+      Welcome to FreeSpot! <%= link_to 'Sign in', new_user_session_path %> to join us.
+      </div>
+    <% end %>
 
 <div class="row align-left medium-unstack">
   <div class ="small-12 medium-6 large-4 column">
     <% provide(:title, 'City') %>
+
     <div class="page-header text-center">
       <h1>City Spots</h1>
     </div>

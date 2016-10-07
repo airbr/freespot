@@ -179,3 +179,21 @@ h4 {
 #bigPin {
   color: $gh-yellow;
 }
+
+// CITY PAGE
+
+#messageBar {
+  background-color: $gh-blue;
+  color: white;
+  font-weight: bold;
+  text-align: center;
+}
+
+#messageBar a {
+  color: $gh-yellow;
+}
+
+#messageBar a:hover {
+  color: white;
+}
+
