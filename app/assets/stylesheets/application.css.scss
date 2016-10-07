@@ -31,7 +31,7 @@ $gh-yellow: #FFE74C;
 $gh-red: #E15554;
 $gh-grey: #CEE5F2;
 $gh-font: 'Raleway', sans-serif;
-$titlebar-menu-icon-color: black;
+
 
 
 // GENERAL STYLING
@@ -65,9 +65,10 @@ body {
 #example-menu, .title-bar {
   background-color: $gh-yellow;
   color: black;
-    button {
-      color: black;
-    }
+  $top-menu-link-color: black;
+  $top-menu-icon-color: black;
+  $top-menu-link-color-toggled: black;
+  $top-menu-icon-color-toggled: black;
 }
 
 #example-menu ul {
@@ -126,7 +127,6 @@ body {
 }
 
 
-
 // USED TO FIX MOBILE NAV BAR VISIBILITY UPON INITIAL LOADING
 .no-js {
   @include breakpoint(small only) {
@@ -141,6 +141,8 @@ body {
     }
   }
 }
+
+// ABOUT PAGE
 
 .aboutHeader{
   text-align: center;
