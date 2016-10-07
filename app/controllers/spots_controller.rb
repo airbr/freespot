@@ -9,7 +9,7 @@ class SpotsController < ApplicationController
     @hash = Gmaps4rails.build_markers(@spots) do |spot, marker|
       marker.lat spot.latitude
       marker.lng spot.longitude
-      marker.infowindow "<p>#{spot.title}</p> <p>#{spot.address}</p> <p>#{spot.description}</p>"
+      marker.infowindow "<p>Spot title: #{spot.title}</p> <p>Address: #{spot.address}</p> <p>More info: #{spot.description}</p> <p>Time Limit: #{spot.time_limit}</p>"
       marker.picture({
                           "url": "http://i.imgur.com/HmtmMSt.png",
                           "width":  50,
@@ -25,7 +25,7 @@ class SpotsController < ApplicationController
     @hash = Gmaps4rails.build_markers(@spot) do |spot, marker|
       marker.lat spot.latitude
       marker.lng spot.longitude
-      marker.infowindow "<p>#{spot.title}</p> <p>#{spot.address}</p> <p>#{spot.description}</p>"
+      marker.infowindow "<p>Spot title: #{spot.title}</p> <p>Address: #{spot.address}</p> <p>More info: #{spot.description}</p> <p>Time Limit: #{spot.time_limit}</p>"
       marker.picture({
                           "url": "http://i.imgur.com/HmtmMSt.png",
                           "width":  50,
