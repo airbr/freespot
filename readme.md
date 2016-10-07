@@ -1,5 +1,5 @@
 # Project FreeSpot
---
+
 ### Quickstart:
 
 * Ensure necessary dependencies are installed:
