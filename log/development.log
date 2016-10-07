@@ -14788,3 +14788,267 @@ Processing by StaticPagesController#city as HTML
 Completed 200 OK in 178ms (Views: 171.8ms | ActiveRecord: 1.7ms)
 
 
+Started GET "/" for ::1 at 2016-10-07 11:49:17 -0400
+  [1m[36mActiveRecord::SchemaMigration Load (0.4ms)[0m  [1m[34mSELECT "schema_migrations".* FROM "schema_migrations"[0m
+Processing by StaticPagesController#city as HTML
+  [1m[36mSpot Load (0.8ms)[0m  [1m[34mSELECT "spots".* FROM "spots" ORDER BY created_at DESC[0m
+  Rendering static_pages/city.html.erb within layouts/application
+  Rendered static_pages/city.html.erb within layouts/application (11.7ms)
+  Rendered layouts/_navigation_links.html.erb (1.6ms)
+  Rendered layouts/_navigation.html.erb (4.1ms)
+Completed 200 OK in 5371ms (Views: 5319.6ms | ActiveRecord: 3.5ms)
+
+
+Started GET "/users/sign_in" for ::1 at 2016-10-07 11:49:34 -0400
+Processing by Devise::SessionsController#new as HTML
+  Rendering devise/sessions/new.html.erb within layouts/application
+  Rendered devise/shared/_links.html.erb (1.8ms)
+  Rendered devise/sessions/new.html.erb within layouts/application (51.8ms)
+  Rendered layouts/_navigation_links.html.erb (0.8ms)
+  Rendered layouts/_navigation.html.erb (2.1ms)
+Completed 200 OK in 253ms (Views: 235.4ms | ActiveRecord: 2.2ms)
+
+
+Started POST "/users/sign_in" for ::1 at 2016-10-07 11:49:39 -0400
+Processing by Devise::SessionsController#create as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"NV/0QJzIIcP8uLBH4Z1VIZ5XlvBrl7L+0cFIM9yaedb6+7XMOXjgm9Jy6wxybBLlykU03kxxCooMX4gVGO9+Fg==", "user"=>{"email"=>"Test1@Test1.com", "username"=>"test1", "password"=>"[FILTERED]", "remember_me"=>"0"}, "commit"=>"Log in"}
+  [1m[36mUser Load (1.2ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."email" = $1 ORDER BY "users"."id" ASC LIMIT $2[0m  [["email", "test1@test1.com"], ["LIMIT", 1]]
+  [1m[35m (0.2ms)[0m  [1m[35mBEGIN[0m
+  [1m[35mSQL (0.6ms)[0m  [1m[33mUPDATE "users" SET "current_sign_in_at" = $1, "last_sign_in_at" = $2, "sign_in_count" = $3, "updated_at" = $4 WHERE "users"."id" = $5[0m  [["current_sign_in_at", 2016-10-07 15:49:39 UTC], ["last_sign_in_at", 2016-10-07 13:57:42 UTC], ["sign_in_count", 8], ["updated_at", 2016-10-07 15:49:39 UTC], ["id", 4]]
+  [1m[35m (112.6ms)[0m  [1m[35mCOMMIT[0m
+Redirected to http://localhost:3000/city
+Completed 302 Found in 289ms (ActiveRecord: 114.6ms)
+
+
+Started GET "/city" for ::1 at 2016-10-07 11:49:39 -0400
+Processing by StaticPagesController#city as HTML
+  [1m[36mSpot Load (0.3ms)[0m  [1m[34mSELECT "spots".* FROM "spots" ORDER BY created_at DESC[0m
+  Rendering static_pages/city.html.erb within layouts/application
+  [1m[36mUser Load (8.5ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 ORDER BY "users"."id" ASC LIMIT $2[0m  [["id", 4], ["LIMIT", 1]]
+  Rendered static_pages/city.html.erb within layouts/application (12.1ms)
+  Rendered layouts/_navigation_links.html.erb (0.6ms)
+  Rendered layouts/_navigation.html.erb (2.0ms)
+Completed 200 OK in 167ms (Views: 155.8ms | ActiveRecord: 8.8ms)
+
+
+Started GET "/city" for ::1 at 2016-10-07 11:49:42 -0400
+Processing by StaticPagesController#city as HTML
+  [1m[36mSpot Load (0.8ms)[0m  [1m[34mSELECT "spots".* FROM "spots" ORDER BY created_at DESC[0m
+  Rendering static_pages/city.html.erb within layouts/application
+  [1m[36mUser Load (0.4ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 ORDER BY "users"."id" ASC LIMIT $2[0m  [["id", 4], ["LIMIT", 1]]
+  Rendered static_pages/city.html.erb within layouts/application (3.4ms)
+  Rendered layouts/_navigation_links.html.erb (0.8ms)
+  Rendered layouts/_navigation.html.erb (2.1ms)
+Completed 200 OK in 166ms (Views: 162.1ms | ActiveRecord: 1.1ms)
+
+
+Started GET "/spots" for ::1 at 2016-10-07 11:49:44 -0400
+Processing by SpotsController#index as HTML
+  [1m[36mUser Load (0.4ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 ORDER BY "users"."id" ASC LIMIT $2[0m  [["id", 4], ["LIMIT", 1]]
+  [1m[36mSpot Load (0.4ms)[0m  [1m[34mSELECT "spots".* FROM "spots" WHERE "spots"."user_id" = $1 ORDER BY "spots"."created_at" DESC[0m  [["user_id", 4]]
+  Rendering spots/index.html.erb within layouts/application
+  Rendered spots/index.html.erb within layouts/application (1.0ms)
+  Rendered layouts/_navigation_links.html.erb (0.7ms)
+  Rendered layouts/_navigation.html.erb (2.0ms)
+Completed 200 OK in 178ms (Views: 158.6ms | ActiveRecord: 0.8ms)
+
+
+Started GET "/" for ::1 at 2016-10-07 11:50:52 -0400
+Processing by StaticPagesController#city as HTML
+  [1m[36mSpot Load (0.3ms)[0m  [1m[34mSELECT "spots".* FROM "spots" ORDER BY created_at DESC[0m
+  Rendering static_pages/city.html.erb within layouts/application
+  [1m[36mUser Load (0.4ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 ORDER BY "users"."id" ASC LIMIT $2[0m  [["id", 4], ["LIMIT", 1]]
+  Rendered static_pages/city.html.erb within layouts/application (3.4ms)
+  Rendered layouts/_navigation_links.html.erb (0.6ms)
+  Rendered layouts/_navigation.html.erb (1.8ms)
+Completed 200 OK in 155ms (Views: 152.2ms | ActiveRecord: 0.7ms)
+
+
+Started DELETE "/users/sign_out" for ::1 at 2016-10-07 11:50:55 -0400
+Processing by Devise::SessionsController#destroy as HTML
+  Parameters: {"authenticity_token"=>"3iUSMQy9vMrJFYKVyvl6brXZIrGmcspyoTDubdO6821DVpYBy77uPr3zxpf4/lCYRybcP3xQgBSjcjYj6Jz0lA=="}
+  [1m[36mUser Load (0.4ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 ORDER BY "users"."id" ASC LIMIT $2[0m  [["id", 4], ["LIMIT", 1]]
+  [1m[35m (0.2ms)[0m  [1m[35mBEGIN[0m
+  [1m[35m (0.1ms)[0m  [1m[35mCOMMIT[0m
+Redirected to http://localhost:3000/
+Completed 302 Found in 8ms (ActiveRecord: 0.6ms)
+
+
+Started GET "/" for ::1 at 2016-10-07 11:50:55 -0400
+Processing by StaticPagesController#city as HTML
+  [1m[36mSpot Load (0.4ms)[0m  [1m[34mSELECT "spots".* FROM "spots" ORDER BY created_at DESC[0m
+  Rendering static_pages/city.html.erb within layouts/application
+  Rendered static_pages/city.html.erb within layouts/application (1.9ms)
+  Rendered layouts/_navigation_links.html.erb (0.6ms)
+  Rendered layouts/_navigation.html.erb (1.9ms)
+Completed 200 OK in 144ms (Views: 141.5ms | ActiveRecord: 0.4ms)
+
+
+Started GET "/spots/new" for ::1 at 2016-10-07 11:51:06 -0400
+Processing by SpotsController#new as HTML
+Completed 401 Unauthorized in 1ms (ActiveRecord: 0.0ms)
+
+
+Started GET "/users/sign_in" for ::1 at 2016-10-07 11:51:06 -0400
+Processing by Devise::SessionsController#new as HTML
+  Rendering devise/sessions/new.html.erb within layouts/application
+  Rendered devise/shared/_links.html.erb (0.9ms)
+  Rendered devise/sessions/new.html.erb within layouts/application (4.9ms)
+  Rendered layouts/_navigation_links.html.erb (0.8ms)
+  Rendered layouts/_navigation.html.erb (2.2ms)
+Completed 200 OK in 158ms (Views: 157.1ms | ActiveRecord: 0.0ms)
+
+
+Started POST "/users/sign_in" for ::1 at 2016-10-07 11:51:19 -0400
+Processing by Devise::SessionsController#create as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"CSUCPWK+GpH7TgANP2R1RuLBDUE2ypEkbbKzCWmykifUEBG001Lozbr6hsWXggoTmjwFIYmKXNxca6SqfjyzGw==", "user"=>{"email"=>"Test1@Test1.com", "username"=>"TEST1", "password"=>"[FILTERED]", "remember_me"=>"0"}, "commit"=>"Log in"}
+  [1m[36mUser Load (0.6ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."email" = $1 ORDER BY "users"."id" ASC LIMIT $2[0m  [["email", "test1@test1.com"], ["LIMIT", 1]]
+  [1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
+  [1m[35mSQL (0.5ms)[0m  [1m[33mUPDATE "users" SET "current_sign_in_at" = $1, "last_sign_in_at" = $2, "sign_in_count" = $3, "updated_at" = $4 WHERE "users"."id" = $5[0m  [["current_sign_in_at", 2016-10-07 15:51:19 UTC], ["last_sign_in_at", 2016-10-07 15:49:39 UTC], ["sign_in_count", 9], ["updated_at", 2016-10-07 15:51:19 UTC], ["id", 4]]
+  [1m[35m (1.9ms)[0m  [1m[35mCOMMIT[0m
+Redirected to http://localhost:3000/spots/new
+Completed 302 Found in 156ms (ActiveRecord: 3.2ms)
+
+
+Started GET "/spots/new" for ::1 at 2016-10-07 11:51:19 -0400
+Processing by SpotsController#new as HTML
+  [1m[36mUser Load (0.3ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 ORDER BY "users"."id" ASC LIMIT $2[0m  [["id", 4], ["LIMIT", 1]]
+  Rendering spots/new.html.erb within layouts/application
+  Rendered spots/_form.html.erb (12.5ms)
+  Rendered spots/new.html.erb within layouts/application (15.2ms)
+  Rendered layouts/_navigation_links.html.erb (0.8ms)
+  Rendered layouts/_navigation.html.erb (2.2ms)
+Completed 200 OK in 186ms (Views: 183.1ms | ActiveRecord: 0.3ms)
+
+
+Started GET "/spots" for ::1 at 2016-10-07 11:51:22 -0400
+Processing by SpotsController#index as HTML
+  [1m[36mUser Load (0.5ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 ORDER BY "users"."id" ASC LIMIT $2[0m  [["id", 4], ["LIMIT", 1]]
+  [1m[36mSpot Load (0.4ms)[0m  [1m[34mSELECT "spots".* FROM "spots" WHERE "spots"."user_id" = $1 ORDER BY "spots"."created_at" DESC[0m  [["user_id", 4]]
+  Rendering spots/index.html.erb within layouts/application
+  Rendered spots/index.html.erb within layouts/application (1.1ms)
+  Rendered layouts/_navigation_links.html.erb (0.9ms)
+  Rendered layouts/_navigation.html.erb (2.8ms)
+Completed 200 OK in 164ms (Views: 157.6ms | ActiveRecord: 0.9ms)
+
+
+Started GET "/spots/new" for ::1 at 2016-10-07 11:53:43 -0400
+Processing by SpotsController#new as HTML
+  [1m[36mUser Load (0.4ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 ORDER BY "users"."id" ASC LIMIT $2[0m  [["id", 4], ["LIMIT", 1]]
+  Rendering spots/new.html.erb within layouts/application
+  Rendered spots/_form.html.erb (6.5ms)
+  Rendered spots/new.html.erb within layouts/application (8.4ms)
+  Rendered layouts/_navigation_links.html.erb (0.7ms)
+  Rendered layouts/_navigation.html.erb (2.0ms)
+Completed 200 OK in 172ms (Views: 168.0ms | ActiveRecord: 0.4ms)
+
+
+Started GET "/users/sign_up" for ::1 at 2016-10-07 11:58:27 -0400
+Processing by Devise::RegistrationsController#new as HTML
+  [1m[36mUser Load (0.4ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 ORDER BY "users"."id" ASC LIMIT $2[0m  [["id", 4], ["LIMIT", 1]]
+Redirected to http://localhost:3000/city
+Filter chain halted as :require_no_authentication rendered or redirected
+Completed 302 Found in 3ms (ActiveRecord: 0.4ms)
+
+
+Started GET "/city" for ::1 at 2016-10-07 11:58:27 -0400
+Processing by StaticPagesController#city as HTML
+  [1m[36mSpot Load (0.3ms)[0m  [1m[34mSELECT "spots".* FROM "spots" ORDER BY created_at DESC[0m
+  Rendering static_pages/city.html.erb within layouts/application
+  [1m[36mUser Load (0.4ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 ORDER BY "users"."id" ASC LIMIT $2[0m  [["id", 4], ["LIMIT", 1]]
+  Rendered static_pages/city.html.erb within layouts/application (3.3ms)
+  Rendered layouts/_navigation_links.html.erb (0.6ms)
+  Rendered layouts/_navigation.html.erb (1.9ms)
+Completed 200 OK in 144ms (Views: 141.4ms | ActiveRecord: 0.7ms)
+
+
+Started DELETE "/users/sign_out" for ::1 at 2016-10-07 11:58:30 -0400
+Processing by Devise::SessionsController#destroy as HTML
+  Parameters: {"authenticity_token"=>"0hciy1fTviRNm/6NXWKAZkZNiIA+qGmciyH5t+twl+R+bdMqpnNH0twPz0zaZbf9OJA3KKirTSB7YMsZXWWrvA=="}
+  [1m[36mUser Load (0.4ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 ORDER BY "users"."id" ASC LIMIT $2[0m  [["id", 4], ["LIMIT", 1]]
+  [1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
+  [1m[35m (0.1ms)[0m  [1m[35mCOMMIT[0m
+Redirected to http://localhost:3000/
+Completed 302 Found in 5ms (ActiveRecord: 0.7ms)
+
+
+Started GET "/" for ::1 at 2016-10-07 11:58:30 -0400
+Processing by StaticPagesController#city as HTML
+  [1m[36mSpot Load (0.3ms)[0m  [1m[34mSELECT "spots".* FROM "spots" ORDER BY created_at DESC[0m
+  Rendering static_pages/city.html.erb within layouts/application
+  Rendered static_pages/city.html.erb within layouts/application (2.5ms)
+  Rendered layouts/_navigation_links.html.erb (1.2ms)
+  Rendered layouts/_navigation.html.erb (3.4ms)
+Completed 200 OK in 128ms (Views: 125.7ms | ActiveRecord: 0.3ms)
+
+
+Started GET "/users/sign_up" for ::1 at 2016-10-07 11:58:31 -0400
+Processing by Devise::RegistrationsController#new as HTML
+  Rendering devise/registrations/new.html.erb within layouts/application
+  Rendered devise/shared/_links.html.erb (1.1ms)
+  Rendered devise/registrations/new.html.erb within layouts/application (7.0ms)
+  Rendered layouts/_navigation_links.html.erb (1.2ms)
+  Rendered layouts/_navigation.html.erb (2.7ms)
+Completed 200 OK in 160ms (Views: 158.4ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/" for ::1 at 2016-10-07 11:59:32 -0400
+Processing by StaticPagesController#city as HTML
+  [1m[36mSpot Load (0.3ms)[0m  [1m[34mSELECT "spots".* FROM "spots" ORDER BY created_at DESC[0m
+  Rendering static_pages/city.html.erb within layouts/application
+  Rendered static_pages/city.html.erb within layouts/application (2.1ms)
+  Rendered layouts/_navigation_links.html.erb (0.7ms)
+  Rendered layouts/_navigation.html.erb (2.0ms)
+Completed 200 OK in 150ms (Views: 147.6ms | ActiveRecord: 0.3ms)
+
+
+Started GET "/" for ::1 at 2016-10-07 12:00:29 -0400
+Processing by StaticPagesController#city as HTML
+  [1m[36mSpot Load (0.3ms)[0m  [1m[34mSELECT "spots".* FROM "spots" ORDER BY created_at DESC[0m
+  Rendering static_pages/city.html.erb within layouts/application
+  Rendered static_pages/city.html.erb within layouts/application (2.0ms)
+  Rendered layouts/_navigation_links.html.erb (1.2ms)
+  Rendered layouts/_navigation.html.erb (2.9ms)
+Completed 200 OK in 152ms (Views: 149.3ms | ActiveRecord: 0.3ms)
+
+
+Started GET "/" for ::1 at 2016-10-07 12:03:21 -0400
+Processing by StaticPagesController#city as HTML
+  [1m[36mSpot Load (0.3ms)[0m  [1m[34mSELECT "spots".* FROM "spots" ORDER BY created_at DESC[0m
+  Rendering static_pages/city.html.erb within layouts/application
+  Rendered static_pages/city.html.erb within layouts/application (2.6ms)
+  Rendered layouts/_navigation_links.html.erb (1.7ms)
+  Rendered layouts/_navigation.html.erb (4.3ms)
+Completed 200 OK in 159ms (Views: 157.2ms | ActiveRecord: 0.3ms)
+
+
+Started GET "/" for ::1 at 2016-10-07 12:03:44 -0400
+Processing by StaticPagesController#city as HTML
+  [1m[36mSpot Load (0.3ms)[0m  [1m[34mSELECT "spots".* FROM "spots" ORDER BY created_at DESC[0m
+  Rendering static_pages/city.html.erb within layouts/application
+  Rendered static_pages/city.html.erb within layouts/application (2.1ms)
+  Rendered layouts/_navigation_links.html.erb (0.8ms)
+  Rendered layouts/_navigation.html.erb (2.1ms)
+Completed 200 OK in 160ms (Views: 158.2ms | ActiveRecord: 0.3ms)
+
+
+Started GET "/" for ::1 at 2016-10-07 12:04:17 -0400
+Processing by StaticPagesController#city as HTML
+  [1m[36mSpot Load (0.3ms)[0m  [1m[34mSELECT "spots".* FROM "spots" ORDER BY created_at DESC[0m
+  Rendering static_pages/city.html.erb within layouts/application
+  Rendered static_pages/city.html.erb within layouts/application (2.0ms)
+  Rendered layouts/_navigation_links.html.erb (0.6ms)
+  Rendered layouts/_navigation.html.erb (2.1ms)
+Completed 200 OK in 146ms (Views: 143.6ms | ActiveRecord: 0.3ms)
+
+
+Started GET "/" for ::1 at 2016-10-07 12:05:04 -0400
+Processing by StaticPagesController#city as HTML
+  [1m[36mSpot Load (0.3ms)[0m  [1m[34mSELECT "spots".* FROM "spots" ORDER BY created_at DESC[0m
+  Rendering static_pages/city.html.erb within layouts/application
+  Rendered static_pages/city.html.erb within layouts/application (1.9ms)
+  Rendered layouts/_navigation_links.html.erb (1.4ms)
+  Rendered layouts/_navigation.html.erb (4.2ms)
+Completed 200 OK in 164ms (Views: 161.7ms | ActiveRecord: 0.3ms)
+
+

@@ -1,8 +1,21 @@
     <% if user_signed_in? == false %>
       <div id="messageBar">
-      Welcome to FreeSpot! <%= link_to 'Sign in', new_user_session_path %> to join us.
+      Welcome to FreeSpot! <%= link_to 'Sign Up', new_user_session_path %> to join us.
       </div>
     <% end %>
+
+    <% if user_signed_in? == false %>
+      <div id="messageBar">
+
+      <br>
+      <p>FreeSpot is a Ruby on Rails app designed by three General Assembler's who are all about
+      sharing the local knowledge: permit, free, begging to be booted? Parking can be a big deal!
+      Help add 'Spots' and comments to the global map below to find your FreeSpot today!
+      </p>
+
+      </div>
+    <% end %>
+
 
 <div class="row align-left medium-unstack">
   <div class ="small-12 medium-6 large-4 column">
@@ -60,3 +73,9 @@
     </script>
     </div>
   </div>
+
+   <% if user_signed_in? == false %>
+      <div id="messageBar">
+      Think of that drink you can get if you find your <%= link_to 'Sign in', new_user_session_path %> today!
+      </div>
+    <% end %>
