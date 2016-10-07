@@ -31,6 +31,8 @@
                 <th>Title</th>
                 <th>Address</th>
                 <th>Time limit</th>
+                <th></th>
+                <th></th>
           </tr>
         </thead>
 
@@ -40,6 +42,8 @@
                 <td><%= link_to spot.title, spot %></td>
                 <td><%= spot.address %></td>
                 <td><%= spot.time_limit %></td>
+                <td class="<%= spot.latitude %> lat"></td>
+                <td class="<%= spot.longitude %> long"></td>
           <% end %>
         </tbody>
       </table>
@@ -57,12 +61,16 @@
           markers = handler.addMarkers(<%=raw @hash.to_json %>);
           handler.bounds.extendWith(markers);
           handler.fitMapToBounds();
+          handler.map.serviceObject.setZoom(12);
         });
 
         $(".spots-content").on("click", "tr", function() {
-        console.log($(this));
-        var laLatLng = new google.maps.LatLng(33.7722, -84.3661);
+        var latitude = $(this).children(".lat").attr("class").split(' ')[0];
+        var longitude = $(this).children(".long").attr("class").split(' ')[0];
+        console.log($(this).children(".lat").attr("class").split(' ')[0]);
+        var laLatLng = new google.maps.LatLng(latitude, longitude);
         handler.map.serviceObject.panTo(laLatLng);
+        handler.map.serviceObject.setZoom(18);
         });
       });
     </script>
