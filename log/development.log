@@ -15745,3 +15745,52 @@ Processing by StaticPagesController#about as HTML
 Completed 200 OK in 151ms (Views: 149.3ms | ActiveRecord: 0.0ms)
 
 
+Started GET "/" for ::1 at 2016-10-07 14:43:06 -0400
+  [1m[36mActiveRecord::SchemaMigration Load (0.4ms)[0m  [1m[34mSELECT "schema_migrations".* FROM "schema_migrations"[0m
+Processing by StaticPagesController#city as HTML
+  [1m[36mSpot Load (0.8ms)[0m  [1m[34mSELECT "spots".* FROM "spots" ORDER BY created_at DESC[0m
+  Rendering static_pages/city.html.erb within layouts/application
+  Rendered static_pages/city.html.erb within layouts/application (10.1ms)
+Started GET "/" for ::1 at 2016-10-07 14:43:07 -0400
+Processing by StaticPagesController#city as HTML
+  [1m[36mSpot Load (1.0ms)[0m  [1m[34mSELECT "spots".* FROM "spots" ORDER BY created_at DESC[0m
+  Rendering static_pages/city.html.erb within layouts/application
+  Rendered static_pages/city.html.erb within layouts/application (4.2ms)
+  Rendered layouts/_navigation_links.html.erb (1.4ms)
+  Rendered layouts/_navigation_links.html.erb (0.6ms)
+  Rendered layouts/_navigation.html.erb (3.7ms)
+  Rendered layouts/_navigation.html.erb (5.3ms)
+Completed 200 OK in 579ms (Views: 573.9ms | ActiveRecord: 1.0ms)
+
+
+Completed 200 OK in 989ms (Views: 948.3ms | ActiveRecord: 3.5ms)
+
+
+Started GET "/about" for ::1 at 2016-10-07 14:43:15 -0400
+Processing by StaticPagesController#about as HTML
+  Rendering static_pages/about.html.erb within layouts/application
+  Rendered static_pages/about.html.erb within layouts/application (0.4ms)
+  Rendered layouts/_navigation_links.html.erb (1.2ms)
+  Rendered layouts/_navigation.html.erb (3.5ms)
+Completed 200 OK in 138ms (Views: 136.7ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/users/sign_in" for ::1 at 2016-10-07 14:43:26 -0400
+Processing by Devise::SessionsController#new as HTML
+  Rendering devise/sessions/new.html.erb within layouts/application
+  Rendered devise/shared/_links.html.erb (1.2ms)
+  Rendered devise/sessions/new.html.erb within layouts/application (29.1ms)
+  Rendered layouts/_navigation_links.html.erb (0.8ms)
+  Rendered layouts/_navigation.html.erb (2.1ms)
+Completed 200 OK in 206ms (Views: 191.3ms | ActiveRecord: 2.2ms)
+
+
+Started GET "/about" for ::1 at 2016-10-07 14:43:30 -0400
+Processing by StaticPagesController#about as HTML
+  Rendering static_pages/about.html.erb within layouts/application
+  Rendered static_pages/about.html.erb within layouts/application (0.4ms)
+  Rendered layouts/_navigation_links.html.erb (0.9ms)
+  Rendered layouts/_navigation.html.erb (2.4ms)
+Completed 200 OK in 149ms (Views: 146.4ms | ActiveRecord: 0.0ms)
+
+

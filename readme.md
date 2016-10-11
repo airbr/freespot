@@ -1,5 +1,5 @@
 # Project FreeSpot
-  * [Live link](https://freespot.herokuapp.com/)
+  * [Live link on Heroku](https://freespot.herokuapp.com/)
 
 ### Quickstart:
 
@@ -25,9 +25,11 @@
 
 ## Summary
 
-FreeSpot is a Ruby on Rails App in development aimed at the issue of finding and sharing knowledge about parking with strong consumption of the Google Maps API. Free Spot incorporates responsive design and custom form features about the variety of different potential parking situations aimed at our intended user.
+FreeSpot is a Ruby on Rails App in development aimed at the issue of finding and sharing knowledge about parking with strong consumption and integration of the Google Maps API. 
 
-Technically, the App incorporates full CRUD features for parking 'Spot' objects and allows all users to see spots place onto a globally viewable map, and add comments to spots other users have added to this map.
+Free Spot incorporates responsive design using the Foundation Framework and custom form features for the variety of different potential parking situations aimed at our intended user.
+
+The App incorporates full CRUD features on parking 'Spot' objects and allows all users to see spots placed onto a globally viewable map. Users also have the ability add comments to spots that other users have added to this map.
 
 ## Development Team
 
@@ -38,7 +40,7 @@ Team members:
 * [Leslie Hochsztein](https://github.com/lhochsz)
 * [Kirsten Humphreys](https://github.com/kirstenhumphreys)
 
-The publicly [Trello Board](https://trello.com/b/O3ZXyAv8/project4-railsapi) for this project is linked within.
+The publicly viewable [Trello Board](https://trello.com/b/O3ZXyAv8/project4-railsapi) for this project is linked within.
 
 
 
