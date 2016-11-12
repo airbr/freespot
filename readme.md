@@ -1,5 +1,5 @@
 # Project FreeSpot
-  * [Live link on Heroku](https://freespot.herokuapp.com/)
+### [Live Deployment via Heroku](https://freespot.herokuapp.com/)
 
 ### Quickstart:
 
@@ -31,6 +31,18 @@ Free Spot incorporates responsive design using the Foundation Framework and cust
 
 The App incorporates full CRUD features on parking 'Spot' objects and allows all users to see spots placed onto a globally viewable map. Users also have the ability add comments to spots that other users have added to this map.
 
+### Future Development- 
+
+Particularly, we view the ability to incorporate 'fun' interaction via the Google Maps Drawing Library to particularly add value to the experience. 
+
+In the following example, we would allow users to create detailed zone maps using the Google Maps Drawing Library and be able to save those created maps, and allow these to be accessed globally by all users.
+
+As at present, this seems very possible but more difficult than current resources and time allow.
+
+![](example-drawinglibrary-UI.png)
+These are the best free parking spot zones near Ponce City Market. The Flag indicates (and would have more detail in this feature) that it is a one way exit onto Ponce De Leon. 
+
+
 ## Development Team
 
 
@@ -46,9 +58,7 @@ The publicly viewable [Trello Board](https://trello.com/b/O3ZXyAv8/project4-rail
 
 ## Technical Specifications
 
-**Ruby on Rails App created for Project 4, WDI 7:**
-
-[This project was designed to meet technical specifications outlined in the WDI7 course are contained within](https://github.com/ATL-WDI-Curriculum/projects/blob/master/project4.md).
+[**Ruby on Rails App created for Project 4, WDI 7:**](https://github.com/ATL-WDI-Curriculum/projects/blob/master/project4.md)
 
 ### Technologies used include:
 

@@ -1,3 +1,9 @@
+
+#Testing folder for Google Maps Drawing Library
+fiddle
+
+
+
 *.rbc
 capybara-*.html
 .rspec
@@ -42,4 +48,3 @@ bower.json
 
 # Ignore Byebug command history file.
 .byebug_history
-fiddle
