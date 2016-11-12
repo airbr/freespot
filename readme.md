@@ -33,7 +33,7 @@ The App incorporates full CRUD features on parking 'Spot' objects and allows all
 
 ### Future Development- 
 
-Particularly, we view the ability to incorporate 'fun' interaction via the Google Maps Drawing Library to particularly add value to the experience. 
+We view the ability to incorporate 'fun' interaction via the Google Maps Drawing Library could particularly add value to the experience. We have experimented with some success with creating maps and saving them in certain states using resources that are not committed to this repo via `gitignore`.
 
 In the following example, we would allow users to create detailed zone maps using the Google Maps Drawing Library and be able to save those created maps, and allow these to be accessed globally by all users.
 
