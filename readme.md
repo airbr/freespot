@@ -39,8 +39,9 @@ In the following example, we would allow users to create detailed zone maps usin
 
 As at present, this seems very possible but more difficult than current resources and time allow.
 
+#####Partial wireframe:
 ![](example-drawinglibrary-UI.png)
-These are the best free parking spot zones near Ponce City Market. The Flag indicates (and would have more detail in this feature) that it is a one way exit onto Ponce De Leon. 
+>Use case: These are the best free parking spot zones near Ponce City Market. The Flag indicates (and would have more detail in this feature) that it is a one way exit onto Ponce De Leon. 
 
 
 ## Development Team
