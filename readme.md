@@ -12,18 +12,17 @@
 **In Terminal:**
 
  1. Clone the repository `git clone https://github.com/airbr/park4.git`
- 2. Ensure all major dependencies above are installed and also that the bundler gem is installed if not via `gem install bundle` 
+ 2. Ensure all major dependencies above are installed (also that the bundler gem is installed if not via `gem install bundler`) 
  3. Install Ruby gems `bundle install`
- 4. Create a database called park4_development in PSQL (to be automated...)
- 5. Run the database migration script `rake db:migrate` 
- 6. Start the Rails server `rails s`
- 7. Open the app in your browser at `localhost:3000`
- 8. Start FreeSpotting!
+ 4. Run the Databas statart script `sh dbbuild.sh` to create the development database and run migration scripts.
+ 5. Start the Rails server `rails s`
+ 6. Open the app in your browser at `localhost:3000`
+ 7. Start FreeSpotting!
 
- ##Desktop Landing Page
+## Desktop Landing Page
 ![](http://i.imgur.com/qddjLad.png)
 
-##Responsive / iPhone sample
+## Responsive / iPhone sample
 ![](http://i.imgur.com/MlloCuV.png?1)
 
 ## Summary
@@ -55,12 +54,14 @@ Team members:
 * [Leslie Hochsztein](https://github.com/lhochsz)
 * [Kirsten Humphreys](https://github.com/kirstenhumphreys)
 
-The publicly viewable [Trello Board](https://trello.com/b/O3ZXyAv8/project4-railsapi) for this project is linked within.
+The original [Trello Board](https://trello.com/b/O3ZXyAv8/project4-railsapi) from this project is available at that link.
 
 
 ## Technical Specifications
 
-[**Ruby on Rails App created for Project 4, WDI 7:**](https://github.com/ATL-WDI-Curriculum/projects/blob/master/project4.md)
+Updated April 2017, The park4 app is still completely functional and works with some newer versions of Ruby and Rails. However, there are some new issues including deprecated usage of Fixnum/Bignum causing at minimum a lot of warning messages and some now incompatible CSS styles and others. Minor changes including adding a simple build script.
+
+[**Ruby on Rails App originally created for Project 4, WDI 7:**](https://github.com/ATL-WDI-Curriculum/projects/blob/master/project4.md)
 
 ### Technologies used include:
 
