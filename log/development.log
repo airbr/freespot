@@ -21588,3 +21588,213 @@ Processing by StaticPagesController#city as HTML
 Completed 200 OK in 327ms (Views: 311.6ms | ActiveRecord: 11.3ms)
 
 
+  [1m[35m (6.0ms)[0m  [1m[35mCREATE TABLE "schema_migrations" ("version" character varying PRIMARY KEY)[0m
+  [1m[35m (3.5ms)[0m  [1m[35mCREATE TABLE "ar_internal_metadata" ("key" character varying PRIMARY KEY, "value" character varying, "created_at" timestamp NOT NULL, "updated_at" timestamp NOT NULL)[0m
+  [1m[35m (0.3ms)[0m  [1m[34mSELECT pg_try_advisory_lock(4037700210970292055);[0m
+  [1m[36mActiveRecord::SchemaMigration Load (0.4ms)[0m  [1m[34mSELECT "schema_migrations".* FROM "schema_migrations"[0m
+Migrating to CreateSpots (20161002164014)
+  [1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
+  [1m[35m (4.0ms)[0m  [1m[35mCREATE TABLE "spots" ("id" serial primary key, "address" character varying NOT NULL, "time_limit" character varying, "created_at" timestamp NOT NULL, "updated_at" timestamp NOT NULL)[0m
+  [1m[35mSQL (0.4ms)[0m  [1m[32mINSERT INTO "schema_migrations" ("version") VALUES ($1) RETURNING "version"[0m  [["version", "20161002164014"]]
+  [1m[35m (0.4ms)[0m  [1m[35mCOMMIT[0m
+Migrating to DeviseCreateUsers (20161002170932)
+  [1m[35m (0.3ms)[0m  [1m[35mBEGIN[0m
+  [1m[35m (3.9ms)[0m  [1m[35mCREATE TABLE "users" ("id" serial primary key, "email" character varying DEFAULT '' NOT NULL, "encrypted_password" character varying DEFAULT '' NOT NULL, "reset_password_token" character varying, "reset_password_sent_at" timestamp, "remember_created_at" timestamp, "sign_in_count" integer DEFAULT 0 NOT NULL, "current_sign_in_at" timestamp, "last_sign_in_at" timestamp, "current_sign_in_ip" inet, "last_sign_in_ip" inet, "created_at" timestamp NOT NULL, "updated_at" timestamp NOT NULL)[0m
+  [1m[35m (0.9ms)[0m  [1m[35mCREATE UNIQUE INDEX  "index_users_on_email" ON "users"  ("email")[0m
+  [1m[35m (0.8ms)[0m  [1m[35mCREATE UNIQUE INDEX  "index_users_on_reset_password_token" ON "users"  ("reset_password_token")[0m
+  [1m[35mSQL (0.2ms)[0m  [1m[32mINSERT INTO "schema_migrations" ("version") VALUES ($1) RETURNING "version"[0m  [["version", "20161002170932"]]
+  [1m[35m (0.4ms)[0m  [1m[35mCOMMIT[0m
+Migrating to AddUserRefToSpots (20161002171621)
+  [1m[35m (0.2ms)[0m  [1m[35mBEGIN[0m
+  [1m[35m (0.7ms)[0m  [1m[35mALTER TABLE "spots" ADD "user_id" integer NOT NULL[0m
+  [1m[35m (0.9ms)[0m  [1m[35mCREATE  INDEX  "index_spots_on_user_id" ON "spots"  ("user_id")[0m
+  [1m[35m (2.5ms)[0m  [1m[35mALTER TABLE "spots" ADD CONSTRAINT "fk_rails_f05e659f8c"
+FOREIGN KEY ("user_id")
+  REFERENCES "users" ("id")
+[0m
+  [1m[35mSQL (0.2ms)[0m  [1m[32mINSERT INTO "schema_migrations" ("version") VALUES ($1) RETURNING "version"[0m  [["version", "20161002171621"]]
+  [1m[35m (0.4ms)[0m  [1m[35mCOMMIT[0m
+Migrating to RemoveAddressFromSpot (20161003145312)
+  [1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
+  [1m[35m (3.5ms)[0m  [1m[35mALTER TABLE "spots" DROP "address"[0m
+  [1m[35mSQL (0.8ms)[0m  [1m[32mINSERT INTO "schema_migrations" ("version") VALUES ($1) RETURNING "version"[0m  [["version", "20161003145312"]]
+  [1m[35m (0.5ms)[0m  [1m[35mCOMMIT[0m
+Migrating to AddColumnsToSpot (20161003145352)
+  [1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
+  [1m[35m (0.4ms)[0m  [1m[35mALTER TABLE "spots" ADD "latitude" float[0m
+  [1m[35m (0.3ms)[0m  [1m[35mALTER TABLE "spots" ADD "longitude" float[0m
+  [1m[35m (0.3ms)[0m  [1m[35mALTER TABLE "spots" ADD "address" character varying[0m
+  [1m[35m (0.4ms)[0m  [1m[35mALTER TABLE "spots" ADD "description" text[0m
+  [1m[35m (0.3ms)[0m  [1m[35mALTER TABLE "spots" ADD "title" character varying[0m
+  [1m[35mSQL (0.2ms)[0m  [1m[32mINSERT INTO "schema_migrations" ("version") VALUES ($1) RETURNING "version"[0m  [["version", "20161003145352"]]
+  [1m[35m (0.3ms)[0m  [1m[35mCOMMIT[0m
+Migrating to AddUsernameToUsers (20161003180013)
+  [1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
+  [1m[35m (0.4ms)[0m  [1m[35mALTER TABLE "users" ADD "username" character varying[0m
+  [1m[35m (0.9ms)[0m  [1m[35mCREATE UNIQUE INDEX  "index_users_on_username" ON "users"  ("username")[0m
+  [1m[35mSQL (0.2ms)[0m  [1m[32mINSERT INTO "schema_migrations" ("version") VALUES ($1) RETURNING "version"[0m  [["version", "20161003180013"]]
+  [1m[35m (0.3ms)[0m  [1m[35mCOMMIT[0m
+Migrating to CreateComments (20161004193556)
+  [1m[35m (0.2ms)[0m  [1m[35mBEGIN[0m
+  [1m[35m (4.4ms)[0m  [1m[35mCREATE TABLE "comments" ("id" serial primary key, "spot_id" integer, "body" text, "created_at" timestamp NOT NULL, "updated_at" timestamp NOT NULL)[0m
+  [1m[35m (1.4ms)[0m  [1m[35mCREATE  INDEX  "index_comments_on_spot_id" ON "comments"  ("spot_id")[0m
+  [1m[35mSQL (0.4ms)[0m  [1m[32mINSERT INTO "schema_migrations" ("version") VALUES ($1) RETURNING "version"[0m  [["version", "20161004193556"]]
+  [1m[35m (0.5ms)[0m  [1m[35mCOMMIT[0m
+Migrating to AddUserRefToComments (20161005161021)
+  [1m[35m (0.3ms)[0m  [1m[35mBEGIN[0m
+  [1m[35m (0.4ms)[0m  [1m[35mALTER TABLE "comments" ADD "user_id" integer[0m
+  [1m[35m (0.8ms)[0m  [1m[35mCREATE  INDEX  "index_comments_on_user_id" ON "comments"  ("user_id")[0m
+  [1m[35m (1.4ms)[0m  [1m[35mALTER TABLE "comments" ADD CONSTRAINT "fk_rails_03de2dc08c"
+FOREIGN KEY ("user_id")
+  REFERENCES "users" ("id")
+[0m
+  [1m[35mSQL (0.2ms)[0m  [1m[32mINSERT INTO "schema_migrations" ("version") VALUES ($1) RETURNING "version"[0m  [["version", "20161005161021"]]
+  [1m[35m (0.3ms)[0m  [1m[35mCOMMIT[0m
+  [1m[36mActiveRecord::InternalMetadata Load (0.4ms)[0m  [1m[34mSELECT  "ar_internal_metadata".* FROM "ar_internal_metadata" WHERE "ar_internal_metadata"."key" = $1 LIMIT $2[0m  [["key", :environment], ["LIMIT", 1]]
+  [1m[35m (0.2ms)[0m  [1m[35mBEGIN[0m
+  [1m[35mSQL (0.5ms)[0m  [1m[32mINSERT INTO "ar_internal_metadata" ("key", "value", "created_at", "updated_at") VALUES ($1, $2, $3, $4) RETURNING "key"[0m  [["key", "environment"], ["value", "development"], ["created_at", 2017-04-19 14:26:58 UTC], ["updated_at", 2017-04-19 14:26:58 UTC]]
+  [1m[35m (0.3ms)[0m  [1m[35mCOMMIT[0m
+  [1m[35m (0.2ms)[0m  [1m[34mSELECT pg_advisory_unlock(4037700210970292055)[0m
+  [1m[36mActiveRecord::SchemaMigration Load (0.2ms)[0m  [1m[34mSELECT "schema_migrations".* FROM "schema_migrations"[0m
+Started GET "/" for ::1 at 2017-04-19 10:29:59 -0400
+  [1m[36mActiveRecord::SchemaMigration Load (0.6ms)[0m  [1m[34mSELECT "schema_migrations".* FROM "schema_migrations"[0m
+Processing by StaticPagesController#city as HTML
+  [1m[36mSpot Load (1.1ms)[0m  [1m[34mSELECT "spots".* FROM "spots" ORDER BY created_at DESC[0m
+  Rendering static_pages/city.html.erb within layouts/application
+  Rendered static_pages/city.html.erb within layouts/application (8.3ms)
+Started GET "/" for ::1 at 2017-04-19 10:30:29 -0400
+Processing by StaticPagesController#city as HTML
+  [1m[36mSpot Load (1.4ms)[0m  [1m[34mSELECT "spots".* FROM "spots" ORDER BY created_at DESC[0m
+  Rendering static_pages/city.html.erb within layouts/application
+  Rendered static_pages/city.html.erb within layouts/application (2.2ms)
+  Rendered layouts/_navigation_links.html.erb (0.7ms)
+  Rendered layouts/_navigation.html.erb (2.3ms)
+Completed 200 OK in 41928ms (Views: 41908.1ms | ActiveRecord: 2.7ms)
+
+
+  Rendered layouts/_navigation_links.html.erb (0.6ms)
+  Rendered layouts/_navigation.html.erb (2.3ms)
+Completed 200 OK in 11790ms (Views: 11787.8ms | ActiveRecord: 1.4ms)
+
+
+Started GET "/" for ::1 at 2017-04-19 10:31:15 -0400
+Processing by StaticPagesController#city as HTML
+  [1m[36mSpot Load (1.3ms)[0m  [1m[34mSELECT "spots".* FROM "spots" ORDER BY created_at DESC[0m
+  Rendering static_pages/city.html.erb within layouts/application
+  Rendered static_pages/city.html.erb within layouts/application (1.5ms)
+  Rendered layouts/_navigation_links.html.erb (0.9ms)
+  Rendered layouts/_navigation.html.erb (2.7ms)
+Completed 200 OK in 140ms (Views: 135.9ms | ActiveRecord: 1.3ms)
+
+
+Started GET "/" for ::1 at 2017-04-19 10:32:16 -0400
+Processing by StaticPagesController#city as HTML
+  [1m[36mSpot Load (1.2ms)[0m  [1m[34mSELECT "spots".* FROM "spots" ORDER BY created_at DESC[0m
+  Rendering static_pages/city.html.erb within layouts/application
+  Rendered static_pages/city.html.erb within layouts/application (1.5ms)
+  Rendered layouts/_navigation_links.html.erb (0.7ms)
+  Rendered layouts/_navigation.html.erb (2.3ms)
+Completed 200 OK in 151ms (Views: 147.6ms | ActiveRecord: 1.2ms)
+
+
+Started GET "/" for ::1 at 2017-04-19 10:32:18 -0400
+Processing by StaticPagesController#city as HTML
+  [1m[36mSpot Load (0.4ms)[0m  [1m[34mSELECT "spots".* FROM "spots" ORDER BY created_at DESC[0m
+  Rendering static_pages/city.html.erb within layouts/application
+  Rendered static_pages/city.html.erb within layouts/application (1.7ms)
+  Rendered layouts/_navigation_links.html.erb (1.1ms)
+  Rendered layouts/_navigation.html.erb (4.2ms)
+Completed 200 OK in 175ms (Views: 172.6ms | ActiveRecord: 0.4ms)
+
+
+Started GET "/" for ::1 at 2017-04-19 10:32:40 -0400
+Processing by StaticPagesController#city as HTML
+  [1m[36mSpot Load (0.5ms)[0m  [1m[34mSELECT "spots".* FROM "spots" ORDER BY created_at DESC[0m
+  Rendering static_pages/city.html.erb within layouts/application
+  Rendered static_pages/city.html.erb within layouts/application (1.6ms)
+  Rendered layouts/_navigation_links.html.erb (1.1ms)
+  Rendered layouts/_navigation.html.erb (4.0ms)
+Completed 200 OK in 149ms (Views: 146.0ms | ActiveRecord: 0.5ms)
+
+
+Started GET "/" for ::1 at 2017-04-19 10:34:05 -0400
+  [1m[36mActiveRecord::SchemaMigration Load (0.5ms)[0m  [1m[34mSELECT "schema_migrations".* FROM "schema_migrations"[0m
+Processing by StaticPagesController#city as HTML
+  [1m[36mSpot Load (1.2ms)[0m  [1m[34mSELECT "spots".* FROM "spots" ORDER BY created_at DESC[0m
+  Rendering static_pages/city.html.erb within layouts/application
+  Rendered static_pages/city.html.erb within layouts/application (19.1ms)
+  Rendered layouts/_navigation_links.html.erb (0.6ms)
+  Rendered layouts/_navigation.html.erb (2.1ms)
+Completed 200 OK in 616ms (Views: 591.9ms | ActiveRecord: 2.8ms)
+
+
+Started GET "/" for ::1 at 2017-04-19 10:34:10 -0400
+Processing by StaticPagesController#city as HTML
+  [1m[36mSpot Load (0.3ms)[0m  [1m[34mSELECT "spots".* FROM "spots" ORDER BY created_at DESC[0m
+  Rendering static_pages/city.html.erb within layouts/application
+  Rendered static_pages/city.html.erb within layouts/application (1.6ms)
+  Rendered layouts/_navigation_links.html.erb (0.7ms)
+  Rendered layouts/_navigation.html.erb (2.4ms)
+Completed 200 OK in 151ms (Views: 148.8ms | ActiveRecord: 0.3ms)
+
+
+  [1m[35m (0.2ms)[0m  [1m[34mSELECT pg_try_advisory_lock(4037700210970292055);[0m
+  [1m[36mActiveRecord::SchemaMigration Load (0.5ms)[0m  [1m[34mSELECT "schema_migrations".* FROM "schema_migrations"[0m
+  [1m[36mActiveRecord::InternalMetadata Load (0.6ms)[0m  [1m[34mSELECT  "ar_internal_metadata".* FROM "ar_internal_metadata" WHERE "ar_internal_metadata"."key" = $1 LIMIT $2[0m  [["key", :environment], ["LIMIT", 1]]
+  [1m[35m (0.2ms)[0m  [1m[35mBEGIN[0m
+  [1m[35m (0.1ms)[0m  [1m[35mCOMMIT[0m
+  [1m[35m (0.3ms)[0m  [1m[34mSELECT pg_advisory_unlock(4037700210970292055)[0m
+  [1m[36mActiveRecord::SchemaMigration Load (0.2ms)[0m  [1m[34mSELECT "schema_migrations".* FROM "schema_migrations"[0m
+Started GET "/" for ::1 at 2017-04-19 10:35:26 -0400
+  [1m[36mActiveRecord::SchemaMigration Load (0.5ms)[0m  [1m[34mSELECT "schema_migrations".* FROM "schema_migrations"[0m
+Processing by StaticPagesController#city as HTML
+  [1m[36mSpot Load (1.2ms)[0m  [1m[34mSELECT "spots".* FROM "spots" ORDER BY created_at DESC[0m
+  Rendering static_pages/city.html.erb within layouts/application
+  Rendered static_pages/city.html.erb within layouts/application (16.4ms)
+  Rendered layouts/_navigation_links.html.erb (0.7ms)
+  Rendered layouts/_navigation.html.erb (2.2ms)
+Completed 200 OK in 648ms (Views: 619.0ms | ActiveRecord: 2.7ms)
+
+
+Started GET "/city?utf8=%E2%9C%93&search=Ponce+City+Market&commit=Search" for ::1 at 2017-04-19 10:35:41 -0400
+Processing by StaticPagesController#city as HTML
+  Parameters: {"utf8"=>"✓", "search"=>"Ponce City Market", "commit"=>"Search"}
+  [1m[36mSpot Load (1.7ms)[0m  [1m[34mSELECT "spots".* FROM "spots" WHERE (title || address || description ILIKE '%Ponce City Market%') ORDER BY created_at DESC[0m
+  Rendering static_pages/city.html.erb within layouts/application
+  Rendered static_pages/city.html.erb within layouts/application (1.7ms)
+  Rendered layouts/_navigation_links.html.erb (0.8ms)
+  Rendered layouts/_navigation.html.erb (4.1ms)
+Completed 200 OK in 168ms (Views: 163.2ms | ActiveRecord: 1.7ms)
+
+
+Started GET "/city?utf8=%E2%9C%93&search=Ponce+City+Market&commit=Search" for ::1 at 2017-04-19 10:35:44 -0400
+Processing by StaticPagesController#city as HTML
+  Parameters: {"utf8"=>"✓", "search"=>"Ponce City Market", "commit"=>"Search"}
+  [1m[36mSpot Load (0.7ms)[0m  [1m[34mSELECT "spots".* FROM "spots" WHERE (title || address || description ILIKE '%Ponce City Market%') ORDER BY created_at DESC[0m
+  Rendering static_pages/city.html.erb within layouts/application
+  Rendered static_pages/city.html.erb within layouts/application (1.5ms)
+  Rendered layouts/_navigation_links.html.erb (1.0ms)
+  Rendered layouts/_navigation.html.erb (2.8ms)
+Completed 200 OK in 168ms (Views: 164.9ms | ActiveRecord: 0.7ms)
+
+
+Started GET "/city?utf8=%E2%9C%93&search=Ponce+City+Market&commit=Search" for ::1 at 2017-04-19 10:35:55 -0400
+Processing by StaticPagesController#city as HTML
+  Parameters: {"utf8"=>"✓", "search"=>"Ponce City Market", "commit"=>"Search"}
+  [1m[36mSpot Load (1.6ms)[0m  [1m[34mSELECT "spots".* FROM "spots" WHERE (title || address || description ILIKE '%Ponce City Market%') ORDER BY created_at DESC[0m
+  Rendering static_pages/city.html.erb within layouts/application
+  Rendered static_pages/city.html.erb within layouts/application (1.5ms)
+  Rendered layouts/_navigation_links.html.erb (1.2ms)
+  Rendered layouts/_navigation.html.erb (4.3ms)
+Completed 200 OK in 160ms (Views: 156.3ms | ActiveRecord: 1.6ms)
+
+
+Started GET "/about" for ::1 at 2017-04-19 10:36:04 -0400
+Processing by StaticPagesController#about as HTML
+  Rendering static_pages/about.html.erb within layouts/application
+  Rendered static_pages/about.html.erb within layouts/application (0.4ms)
+  Rendered layouts/_navigation_links.html.erb (1.4ms)
+  Rendered layouts/_navigation.html.erb (3.7ms)
+Completed 200 OK in 162ms (Views: 160.8ms | ActiveRecord: 0.0ms)
+
+
