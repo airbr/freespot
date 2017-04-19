@@ -1,5 +1,7 @@
 # Project FreeSpot
-### [Live Deployment via Heroku](https://freespot.herokuapp.com/)
+
+### [New Branch/Reployment, making park4 a more Progressive Web App - Heroku April 2017](https://park4-pwa.herokuapp.com/)
+### [Live Original Deployment - Heroku October 2016](https://freespot.herokuapp.com/)
 
 ### Quickstart:
 
