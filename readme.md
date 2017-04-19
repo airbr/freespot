@@ -41,7 +41,7 @@ In the following example, we would allow users to create detailed zone maps usin
 
 As at present, this seems very possible but more difficult than current resources and time allow.
 
-#####Partial wireframe:
+##### Partial wireframe:
 ![](example-drawinglibrary-UI.png)
 >Use case: These are the best free parking spot zones near Ponce City Market. The Flag indicates (and would have more detail in this feature) that it is a one way exit onto Ponce De Leon. 
 
@@ -59,11 +59,11 @@ The original [Trello Board](https://trello.com/b/O3ZXyAv8/project4-railsapi) fro
 
 ## Technical Specifications
 
-Updated April 2017, The park4 app is still completely functional and works with some newer versions of Ruby and Rails. However, there are some new issues including deprecated usage of Fixnum/Bignum causing at minimum a lot of warning messages and some now incompatible CSS styles and others. Minor changes including adding a simple build script.
+Update April 2017: The park4 app is still completely functional and works with some newer versions of Ruby and Rails. However, there are some new issues including deprecated usage of Fixnum/Bignum causing at minimum a lot of warning messages and some now incompatible CSS styles and others. Minor changes including adding a simple build script.
 
 [**Ruby on Rails App originally created for Project 4, WDI 7:**](https://github.com/ATL-WDI-Curriculum/projects/blob/master/project4.md)
 
-### Technologies used include:
+### Technologies used inclgit ude:
 
 * ruby 2.4.1p111 (2017-03-22 revision 58053) [x86_64-darwin16]
     * ~~Ruby 2.3.1p112 (2016-04-26 revision 54768 (As at Oct 7 2016)~~
