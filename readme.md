@@ -5,17 +5,20 @@
 
 * Ensure necessary dependencies are installed:
  * [Ruby](https://www.tutorialspoint.com/ruby-on-rails/rails-installation.htm)
+    * [Bundler](https://bundler.io/)
  * [Rails](https://www.tutorialspoint.com/ruby-on-rails/rails-installation.htm)
  * [PostgreSQL](https://www.tutorialspoint.com/ruby-on-rails/rails-installation.htm)
 
 **In Terminal:**
 
  1. Clone the repository `git clone https://github.com/airbr/park4.git`
- 2. Install Ruby gems `bundle install`
- 3. Run the database migration script `rake db:migrate`
- 4. Start the Rails server `rails s`
- 5. Open the app in your browser at `localhost:3000`
- 6. Start FreeSpotting!
+ 2. Ensure all major dependencies above are installed and also that the bundler gem is installed if not via `gem install bundle` 
+ 3. Install Ruby gems `bundle install`
+ 4. Create a database called park4_development in PSQL (to be automated...)
+ 5. Run the database migration script `rake db:migrate` 
+ 6. Start the Rails server `rails s`
+ 7. Open the app in your browser at `localhost:3000`
+ 8. Start FreeSpotting!
 
  ##Desktop Landing Page
 ![](http://i.imgur.com/qddjLad.png)
@@ -46,7 +49,6 @@ As at present, this seems very possible but more difficult than current resource
 
 ## Development Team
 
-
 Team members:
 
 * [Morgan Murrah](https://github.com/airbr)
@@ -56,16 +58,18 @@ Team members:
 The publicly viewable [Trello Board](https://trello.com/b/O3ZXyAv8/project4-railsapi) for this project is linked within.
 
 
-
 ## Technical Specifications
 
 [**Ruby on Rails App created for Project 4, WDI 7:**](https://github.com/ATL-WDI-Curriculum/projects/blob/master/project4.md)
 
 ### Technologies used include:
 
-* Ruby 2.3.1p112 (2016-04-26 revision 54768 (As at Oct 7 2016)
-* Rails 5.0.0.1
-* PostgreSQL 9.5.4
+* ruby 2.4.1p111 (2017-03-22 revision 58053) [x86_64-darwin16]
+    * ~~Ruby 2.3.1p112 (2016-04-26 revision 54768 (As at Oct 7 2016)~~
+* Rails 5.0.1
+    * ~~Rails 5.0.0.1~~
+* psql (PostgreSQL) 9.6.2
+
 
 * Ruby/Rails Gems including:
 	* [Google Maps for Rails](https://github.com/apneadiving/Google-Maps-for-Rails)
