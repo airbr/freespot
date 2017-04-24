@@ -2,7 +2,6 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="ce480ec1-1166-4621-86d0-9119f7557df0" name="Default" comment="Readme change">
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/app/assets/javascripts/channels/alternate-autocomplete-jsonoutput.js" />
       <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/app/assets/manifest.json" />
       <change type="DELETED" beforePath="$PROJECT_DIR$/app/assets/javascripts/comments.coffee" afterPath="" />
       <change type="DELETED" beforePath="$PROJECT_DIR$/app/assets/javascripts/spots.coffee" afterPath="" />
@@ -495,11 +494,18 @@
       <option name="project" value="LOCAL" />
       <updated>1493072293415</updated>
     </task>
-    <option name="localTasksCounter" value="6" />
+    <task id="LOCAL-00006" summary="Split out large comment/alternate code before later removing">
+      <created>1493075551244</created>
+      <option name="number" value="00006" />
+      <option name="presentableId" value="LOCAL-00006" />
+      <option name="project" value="LOCAL" />
+      <updated>1493075551244</updated>
+    </task>
+    <option name="localTasksCounter" value="7" />
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="3537000" />
+    <option name="totallyTimeSpent" value="3583000" />
   </component>
   <component name="ToolWindowManager">
     <frame x="0" y="0" width="1920" height="1080" extended-state="0" />
@@ -551,7 +557,8 @@
     <MESSAGE value="Updated Readme/Dev Log" />
     <MESSAGE value="Readme typo" />
     <MESSAGE value="Readme change" />
-    <option name="LAST_COMMIT_MESSAGE" value="Readme change" />
+    <MESSAGE value="Split out large comment/alternate code before later removing" />
+    <option name="LAST_COMMIT_MESSAGE" value="Split out large comment/alternate code before later removing" />
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager />
