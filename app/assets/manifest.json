@@ -1,0 +1,26 @@
+{
+  "name": "Park4",
+  "short_name": "Park4",
+  "start_url": ".",
+  "display": "standalone",
+  "background_color": "blue",
+  "theme_color": "black",
+  "description": "Park4",
+  "icons": [
+    {
+      "src": "",
+      "sizes": "144x144",
+      "type": "image/png"
+    },
+    {
+      "src": "",
+      "sizes": "192x192",
+      "type": "image/png"
+    },
+    {
+      "src": "",
+      "sizes": "256x256",
+      "type": "image/png"
+    }
+  ]
+}
