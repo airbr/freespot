@@ -1,7 +1,7 @@
 # Project FreeSpot
 
-<!-- ### [New Dev branch: Heroku April 2017](https://park4-pwa.herokuapp.com/) -->
-### [Live Original Deployment - Heroku October 2016](https://freespot.herokuapp.com/)
+### [New/Dev branch: last deployed to Heroku April 24 2017](https://park4-pwa.herokuapp.com/)
+### [Original Deployment/MVP/v1.0 - Heroku October 2016](https://freespot.herokuapp.com/)
 
 ### Quickstart:
 
@@ -27,6 +27,11 @@
 ## Responsive / iPhone sample
 ![](http://i.imgur.com/MlloCuV.png?1)
 
+## Add to Homescreen Icon enabled
+
+![](http://i.imgur.com/ImuJ32S.png)
+<!--![](http://i.imgur.com/tFy2wo4.png)
+-->
 ## Summary
 
 FreeSpot is a Ruby on Rails App in development aimed at the issue of finding and sharing knowledge about parking with strong consumption and integration of the Google Maps API. 
