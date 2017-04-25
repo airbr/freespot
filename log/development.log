@@ -21805,3 +21805,106 @@ Completed 200 OK in 162ms (Views: 160.8ms | ActiveRecord: 0.0ms)
   [1m[35m (0.1ms)[0m  [1m[35mCOMMIT[0m
   [1m[35m (0.2ms)[0m  [1m[34mSELECT pg_advisory_unlock(4037700210970292055)[0m
   [1m[36mActiveRecord::SchemaMigration Load (0.2ms)[0m  [1m[34mSELECT "schema_migrations".* FROM "schema_migrations"[0m
+Started GET "/" for ::1 at 2017-04-25 13:31:31 -0400
+  [1m[36mActiveRecord::SchemaMigration Load (24.8ms)[0m  [1m[34mSELECT "schema_migrations".* FROM "schema_migrations"[0m
+Processing by StaticPagesController#city as HTML
+  [1m[36mSpot Load (28.0ms)[0m  [1m[34mSELECT "spots".* FROM "spots" ORDER BY created_at DESC[0m
+  Rendering static_pages/city.html.erb within layouts/application
+  Rendered static_pages/city.html.erb within layouts/application (14.8ms)
+  Rendered layouts/_navigation_links.html.erb (1.4ms)
+  Rendered layouts/_navigation.html.erb (3.3ms)
+Completed 200 OK in 715ms (Views: 646.7ms | ActiveRecord: 37.7ms)
+
+
+Started GET "/about" for ::1 at 2017-04-25 13:31:42 -0400
+Processing by StaticPagesController#about as HTML
+  Rendering static_pages/about.html.erb within layouts/application
+  Rendered static_pages/about.html.erb within layouts/application (0.9ms)
+  Rendered layouts/_navigation_links.html.erb (0.9ms)
+  Rendered layouts/_navigation.html.erb (2.3ms)
+Completed 200 OK in 174ms (Views: 170.0ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/users/sign_up" for ::1 at 2017-04-25 13:31:43 -0400
+Processing by Devise::RegistrationsController#new as HTML
+  Rendering devise/registrations/new.html.erb within layouts/application
+  Rendered devise/shared/_links.html.erb (4.7ms)
+  Rendered devise/registrations/new.html.erb within layouts/application (38.6ms)
+  Rendered layouts/_navigation_links.html.erb (1.6ms)
+  Rendered layouts/_navigation.html.erb (4.2ms)
+Completed 200 OK in 354ms (Views: 322.4ms | ActiveRecord: 14.6ms)
+
+
+Started GET "/about" for ::1 at 2017-04-25 13:31:45 -0400
+Processing by StaticPagesController#about as HTML
+  Rendering static_pages/about.html.erb within layouts/application
+  Rendered static_pages/about.html.erb within layouts/application (0.6ms)
+  Rendered layouts/_navigation_links.html.erb (1.9ms)
+  Rendered layouts/_navigation.html.erb (4.2ms)
+Completed 200 OK in 170ms (Views: 167.7ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/" for ::1 at 2017-04-25 13:55:09 -0400
+Processing by StaticPagesController#city as HTML
+  [1m[36mSpot Load (1.2ms)[0m  [1m[34mSELECT "spots".* FROM "spots" ORDER BY created_at DESC[0m
+  Rendering static_pages/city.html.erb within layouts/application
+  Rendered static_pages/city.html.erb within layouts/application (1.9ms)
+  Rendered layouts/_navigation_links.html.erb (0.8ms)
+  Rendered layouts/_navigation.html.erb (2.1ms)
+Completed 200 OK in 317ms (Views: 312.9ms | ActiveRecord: 1.2ms)
+
+
+Started GET "/" for ::1 at 2017-04-25 13:55:11 -0400
+Processing by StaticPagesController#city as HTML
+  [1m[36mSpot Load (3.1ms)[0m  [1m[34mSELECT "spots".* FROM "spots" ORDER BY created_at DESC[0m
+  Rendering static_pages/city.html.erb within layouts/application
+  Rendered static_pages/city.html.erb within layouts/application (4.2ms)
+  Rendered layouts/_navigation_links.html.erb (0.9ms)
+  Rendered layouts/_navigation.html.erb (2.6ms)
+Completed 200 OK in 180ms (Views: 174.2ms | ActiveRecord: 3.1ms)
+
+
+Started GET "/" for ::1 at 2017-04-25 13:55:18 -0400
+Processing by StaticPagesController#city as HTML
+  [1m[36mSpot Load (0.5ms)[0m  [1m[34mSELECT "spots".* FROM "spots" ORDER BY created_at DESC[0m
+  Rendering static_pages/city.html.erb within layouts/application
+  Rendered static_pages/city.html.erb within layouts/application (5.1ms)
+  Rendered layouts/_navigation_links.html.erb (1.2ms)
+  Rendered layouts/_navigation.html.erb (3.6ms)
+Completed 200 OK in 240ms (Views: 236.7ms | ActiveRecord: 0.5ms)
+
+
+  
+ActionController::RoutingError (No route matches [GET] "/assets/underscore-min.map"):
+  
+actionpack (5.0.1) lib/action_dispatch/middleware/debug_exceptions.rb:53:in `call'
+web-console (3.5.0) lib/web_console/middleware.rb:135:in `call_app'
+web-console (3.5.0) lib/web_console/middleware.rb:28:in `block in call'
+web-console (3.5.0) lib/web_console/middleware.rb:18:in `catch'
+web-console (3.5.0) lib/web_console/middleware.rb:18:in `call'
+actionpack (5.0.1) lib/action_dispatch/middleware/show_exceptions.rb:31:in `call'
+railties (5.0.1) lib/rails/rack/logger.rb:36:in `call_app'
+railties (5.0.1) lib/rails/rack/logger.rb:24:in `block in call'
+activesupport (5.0.1) lib/active_support/tagged_logging.rb:69:in `block in tagged'
+activesupport (5.0.1) lib/active_support/tagged_logging.rb:26:in `tagged'
+activesupport (5.0.1) lib/active_support/tagged_logging.rb:69:in `tagged'
+railties (5.0.1) lib/rails/rack/logger.rb:24:in `call'
+sprockets-rails (3.2.0) lib/sprockets/rails/quiet_assets.rb:11:in `block in call'
+activesupport (5.0.1) lib/active_support/logger_silence.rb:20:in `silence'
+activesupport (5.0.1) lib/active_support/logger.rb:63:in `block (3 levels) in broadcast'
+activesupport (5.0.1) lib/active_support/logger_silence.rb:20:in `silence'
+activesupport (5.0.1) lib/active_support/logger.rb:61:in `block (2 levels) in broadcast'
+sprockets-rails (3.2.0) lib/sprockets/rails/quiet_assets.rb:11:in `call'
+actionpack (5.0.1) lib/action_dispatch/middleware/request_id.rb:24:in `call'
+rack (2.0.1) lib/rack/method_override.rb:22:in `call'
+rack (2.0.1) lib/rack/runtime.rb:22:in `call'
+activesupport (5.0.1) lib/active_support/cache/strategy/local_cache_middleware.rb:28:in `call'
+actionpack (5.0.1) lib/action_dispatch/middleware/executor.rb:12:in `call'
+actionpack (5.0.1) lib/action_dispatch/middleware/static.rb:136:in `call'
+rack (2.0.1) lib/rack/sendfile.rb:111:in `call'
+railties (5.0.1) lib/rails/engine.rb:522:in `call'
+puma (3.8.2) lib/puma/configuration.rb:224:in `call'
+puma (3.8.2) lib/puma/server.rb:600:in `handle_request'
+puma (3.8.2) lib/puma/server.rb:435:in `process_client'
+puma (3.8.2) lib/puma/server.rb:299:in `block in run'
+puma (3.8.2) lib/puma/thread_pool.rb:120:in `block in spawn_thread'
