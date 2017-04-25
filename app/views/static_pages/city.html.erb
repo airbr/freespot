@@ -6,6 +6,35 @@
 
 
 <div class="row align-left medium-unstack">
+
+
+  <div class="columns flex-video">
+      <div id="map" style='max-width: 1000px; height: 740px;'></div>
+
+    <script type="text/javascript" defer>
+      $(function() {
+
+        handler = Gmaps.build('Google');
+        handler.buildMap({ provider: { }, internal: {id: 'map'}}, function(){
+          markers = handler.addMarkers(<%=raw @hash.to_json %>);
+          handler.bounds.extendWith(markers);
+          handler.fitMapToBounds();
+          handler.map.serviceObject.setZoom(12);
+        });
+
+        $(".spots-content").on("click", "tr", function() {
+        var latitude = $(this).children(".lat").attr("class").split(' ')[0];
+        var longitude = $(this).children(".long").attr("class").split(' ')[0];
+        console.log($(this).children(".lat").attr("class").split(' ')[0]);
+        var laLatLng = new google.maps.LatLng(latitude, longitude);
+        handler.map.serviceObject.panTo(laLatLng);
+        handler.map.serviceObject.setZoom(18);
+        });
+      });
+    </script>
+    </div>
+
+
   <div class ="small-12 medium-6 large-4 column">
     <% provide(:title, 'FreeSpot | City') %>
 
@@ -51,28 +80,4 @@
     </div>
   </div>
 
-  <div class="columns flex-video">
-      <div id="map" style='max-width: 1000px; height: 740px;'></div>
-
-    <script type="text/javascript" defer>
-      $(function() {
-        handler = Gmaps.build('Google');
-        handler.buildMap({ provider: { }, internal: {id: 'map'}}, function(){
-          markers = handler.addMarkers(<%=raw @hash.to_json %>);
-          handler.bounds.extendWith(markers);
-          handler.fitMapToBounds();
-          handler.map.serviceObject.setZoom(12);
-        });
-
-        $(".spots-content").on("click", "tr", function() {
-        var latitude = $(this).children(".lat").attr("class").split(' ')[0];
-        var longitude = $(this).children(".long").attr("class").split(' ')[0];
-        console.log($(this).children(".lat").attr("class").split(' ')[0]);
-        var laLatLng = new google.maps.LatLng(latitude, longitude);
-        handler.map.serviceObject.panTo(laLatLng);
-        handler.map.serviceObject.setZoom(18);
-        });
-      });
-    </script>
-    </div>
   </div>
