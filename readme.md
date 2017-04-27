@@ -70,7 +70,7 @@ Update April 2017: The park4 app is still completely functional and works with s
 
 [**Ruby on Rails App originally created for Project 4, WDI 7:**](https://github.com/ATL-WDI-Curriculum/projects/blob/master/project4.md)
 
-### Technologies used inclgit ude:
+### Technologies used include:
 
 * ruby 2.4.1p111 (2017-03-22 revision 58053) [x86_64-darwin16]
     * ~~Ruby 2.3.1p112 (2016-04-26 revision 54768 (As at Oct 7 2016)~~
