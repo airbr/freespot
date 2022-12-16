@@ -1,7 +1,6 @@
 # Project FreeSpot
 
-### [New/Dev branch: last deployed to Heroku April 24 2017](https://park4-pwa.herokuapp.com/)
-### [Original Deployment/MVP/v1.0 - Heroku October 2016](https://freespot.herokuapp.com/)
+# Currently, no live deployment. This project was on a now deprecated free Heroku stack recently removed. It has not been re-deployed since 2017 and likely contains many dependency issues, security issues and I know for a fact the Google Maps API has changed as well. But this is a project I am proud of and happy to leave as is.
 
 ### Quickstart:
 
