@@ -1,6 +1,8 @@
 # Project FreeSpot
 
-# Currently, no live deployment. This project was on a now deprecated free Heroku stack recently removed. It has not been re-deployed since 2017 and likely contains many dependency issues, security issues and I know for a fact the Google Maps API has changed as well. But this is a project I am proud of and happy to leave as is.
+## Currently, no live deployment. This project was on a now deprecated free Heroku stack recently removed. 
+
+## Freespot has not been re-deployed since 2017 and likely contains many dependency issues and I know for a fact the Google Maps API has changed as well. But this is a project I am proud of and happy to leave as is for inspiration.
 
 ### Quickstart:
 
